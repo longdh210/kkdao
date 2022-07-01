@@ -4,7 +4,6 @@ import "react-circular-progressbar/dist/styles.css";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import IntroVideo1 from "../IntroVideo1/introVideo";
 
 function Loading() {
     const [value, setValue] = useState(0);
@@ -31,17 +30,19 @@ function Loading() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
         >
-            <CircularProgressbar
-                value={value}
-                maxValue={100}
-                text={value + "%"}
-                styles={buildStyles({
-                    textColor: "#9EA0A3",
-                    pathColor: "#9EA0A3",
-                    trailColor: "#000000 20%",
-                })}
-                strokeWidth={3}
-            />
+            <div>
+                <CircularProgressbar
+                    value={value}
+                    maxValue={100}
+                    text={value + "%"}
+                    styles={buildStyles({
+                        textColor: "#9EA0A3",
+                        pathColor: "#9EA0A3",
+                        trailColor: "#000000 20%",
+                    })}
+                    strokeWidth={3}
+                />
+            </div>
         </motion.div>
     );
 }

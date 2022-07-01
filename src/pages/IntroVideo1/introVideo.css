@@ -1,0 +1,47 @@
+.intro {
+    width: 100vw;
+    display: block;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#video {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1000;
+
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    z-index: 20;
+    justify-content: space-between;
+}
+
+.kklogo {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.emailTwitter {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.emailLogo {
+    /* margin-bottom: 10px; */
+    width: 45%;
+    /* height: 77px; */
+    margin-bottom: 5%;
+}
+
+.twitterLogo {
+    width: 55%;
+}
