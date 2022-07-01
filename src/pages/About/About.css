@@ -1,0 +1,80 @@
+.root {
+  position: absolute;
+  background-image: url("../../assets/about-bg.svg");
+  background-size: contain;
+  background-repeat: repeat-y;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+}
+
+.titleContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: xx-large;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  width: max-content;
+  background: linear-gradient(
+    75.27deg,
+    #7c7d7f -24.99%,
+    #c3c4c6 14.72%,
+    #9ea0a3 57.04%,
+    #cbccce 100%
+  );
+  max-lines: 1;
+  letter-spacing: 30px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitleContainer {
+  position: relative;
+  width: 50%;
+  left: 60%;
+}
+
+.subtitle {
+  text-align: justify;
+  font-size: medium;
+  line-height: 160%;
+}
+
+.btn {
+  float: left;
+  background: #ffd953;
+  padding: 16px;
+  border-width: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 16px;
+}
+
+.btn:hover {
+  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
+    3px 3px 6px rgba(105, 129, 162, 0.2);
+}
+
+.rock1 {
+  position: absolute;
+  width: 20%;
+  left: 10%;
+  bottom: 0;
+}
+
+.rock2 {
+  width: 10%;
+}
+
+.rock3 {
+  position: absolute;
+  width: 10%;
+  margin-right: 0;
+  bottom: 0;
+  resize: contain;
+}
