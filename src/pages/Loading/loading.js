@@ -16,7 +16,7 @@ function Loading() {
 
         if (value == 100) {
             clearTimeout(timerId);
-            navigate("/introvideo1");
+            navigate("/introvideolandingpage");
         }
 
         return () => clearTimeout(timerId);
