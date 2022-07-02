@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import SocialButtons from "../../components/SocialButtons";
 import BackButton from "../../assets/back-button.svg";
 import Rock01 from "../../assets/KKDAO_Rock/Rock01.png";
