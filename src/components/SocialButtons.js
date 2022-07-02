@@ -34,7 +34,7 @@ const SocialButtons = ({ leftIcon }) => {
             className="twitterLogo"
             style={{ width: "55%" }}
             onClick={() => navigate("/about")}
-          ></img>
+          />
         </div>
       </div>
     </div>

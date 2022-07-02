@@ -9,8 +9,6 @@ import Rock03 from "../../assets/KKDAO_Rock/Rock03.png";
 import "./About.css";
 
 const About = () => {
-  const [hoverButton, setHoverButton] = useState(false);
-
   return (
     <div className="root">
       <SocialButtons leftIcon={<BackIcon />} />
