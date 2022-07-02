@@ -1,0 +1,93 @@
+.focusPage {
+    background: #EDEDED;
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    overflow: hidden;
+}
+
+.titleFocus {
+    height: 20%;
+    font-family: SFUFutura;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 150%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.titleFocus .child {
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 15%;
+    width: 50%;
+}
+
+.titleFocus .child2 {
+    display: block;
+    height: 100%;
+    margin-left: 60%; 
+    margin-right: auto;
+    width: 50%;
+}
+
+.rock1 {
+    display: block;
+    height: 250%;
+    transform: translate(-10%, -50%);
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+    width: 100vw;
+    margin-left: 3%;
+}
+
+.row2 {
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+    width: 100vw;
+    margin-left: 3%;
+}
+
+.pillar {
+    width: 20%;
+    position: relative;
+    text-align: center;
+}
+
+.pillar .daos {
+    width: 130%;
+    margin-top: 70%;
+}
+
+
+.daosImg {
+    position: absolute;
+    width: 70%;
+    float: center;
+    margin-left: 50%;
+    top: 5px;
+} 
+
+.daosImg:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+    width: 75%;
+}
+
+/* .daosImg:hover ~ .card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+  } */
+
+@font-face {
+    font-family: 'SFUFutura';
+    src: local('SFUFutura'), url(../../assets/fonts/SFUFuturaBold.TTF) format('woff');
+}
