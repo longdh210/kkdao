@@ -8,8 +8,10 @@ import Rock03 from "../../assets/KKDAO_Rock/Rock03.png";
 import "./About.css";
 
 const About = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="root">
+    <div className="Container">
       <div id="backgroundContainer">
         <div id="rockHeaderContainer">
           <SocialButtons leftIcon={<BackIcon />} />
@@ -34,7 +36,7 @@ const About = () => {
             (centralized finance), Web3 Apps, Infrastructure, Wallet, Gaming,
             and NFT.
           </p>
-          <button id="shareInnovationBtn">
+          <button id="shareInnovationBtn" onClick={() => navigate("/signup")}>
             <b>Share your innovation here!</b>
           </button>
         </div>

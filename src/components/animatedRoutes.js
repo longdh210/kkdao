@@ -5,6 +5,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { AnimatePresence } from "framer-motion";
 import About from "../pages/About/About";
+import SignUp from "../pages/SignUp/SignUp";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -19,6 +20,7 @@ function AnimatedRoutes() {
           element={<IntroVideoLandingPage />}
         />
         <Route path="zoomaboutpage" element={<ZoomAboutPage />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </AnimatePresence>
   );
