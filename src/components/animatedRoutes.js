@@ -1,5 +1,6 @@
 import Loading from "../pages/Loading/loading";
-import IntroVideo1 from "../pages/IntroVideo1/introVideo";
+import IntroVideoLandingPage from "../pages/IntroVideoLandingPage/introVideoLandingPage";
+import ZoomAboutPage from "../pages/ZoomAboutPage/zoomAboutPage";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import { AnimatePresence } from "framer-motion";
@@ -11,7 +12,8 @@ function AnimatedRoutes() {
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Loading />}></Route>
-                <Route path="/introvideo1" element={<IntroVideo1 />}></Route>
+                <Route path="/introvideolandingpage" element={<IntroVideoLandingPage />}></Route>
+                <Route path="zoomaboutpage" element={<ZoomAboutPage/>}></Route>
             </Routes>
         </AnimatePresence>
     );
