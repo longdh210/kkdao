@@ -11,12 +11,22 @@ import "./About.css";
 const About = () => {
   return (
     <div className="root">
-      <SocialButtons leftIcon={<BackIcon />} />
-      <img src={Rock02} alt="Rock02" className="rock2" />
-      <div className="titleContainer">
-        <h1 className="title">ABOUT THE PROJECT</h1>
-        <div className="subtitleContainer">
-          <p className="subtitle">
+      <div id="backgroundContainer">
+        <div id="rockHeaderContainer">
+          <SocialButtons leftIcon={<BackIcon />} />
+          <img src={Rock02} alt="Rock02" id="rock2" />
+        </div>
+
+        <div className="footer">
+          <img src={Rock01} alt="Rock01" id="rock1" />
+          <img src={Rock03} alt="Rock03" id="rock3" />
+        </div>
+      </div>
+
+      <div id="introContainer">
+        <h1 id="title">ABOUT THE PROJECT</h1>
+        <div id="subtitleContainer">
+          <p id="subtitle">
             <b>KK DAO is the first DAO run by a VC firm in Southeast Asia.</b>{" "}
             We believe that KK DAO can create opportunities for next generation
             talent in Web 3.0 in developing countries, support the underserved
@@ -25,13 +35,11 @@ const About = () => {
             (centralized finance), Web3 Apps, Infrastructure, Wallet, Gaming,
             and NFT.
           </p>
-          <button className="btn">
+          <button id="shareInnovationBtn">
             <b>Share your innovation here!</b>
           </button>
         </div>
       </div>
-      <img src={Rock01} alt="Rock01" className="rock1" />
-      <img src={Rock03} alt="Rock03" className="rock3" />
     </div>
   );
 };

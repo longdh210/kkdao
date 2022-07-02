@@ -1,24 +1,47 @@
 .root {
-  position: absolute;
   background-image: url("../../assets/about-bg.svg");
   background-size: contain;
-  background-repeat: repeat-y;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
+  background-repeat: no-repeat;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  position: relative;
 }
 
-.titleContainer {
+#backgroundContainer {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: xx-large;
-  transform: translate(-50%, -50%);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.title {
-  width: max-content;
+#rockHeaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#introContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#title {
   background: linear-gradient(
     75.27deg,
     #7c7d7f -24.99%,
@@ -26,6 +49,8 @@
     #9ea0a3 57.04%,
     #cbccce 100%
   );
+  text-align: center;
+  font-size: 40px;
   max-lines: 1;
   letter-spacing: 30px;
   -webkit-background-clip: text;
@@ -33,19 +58,19 @@
   background-clip: text;
 }
 
-.subtitleContainer {
+#subtitleContainer {
+  width: 30%;
+  transform: translateX(50%);
   position: relative;
-  width: 50%;
-  left: 60%;
 }
 
-.subtitle {
+#subtitle {
   text-align: justify;
   font-size: medium;
   line-height: 160%;
 }
 
-.btn {
+#shareInnovationBtn {
   float: left;
   background: #ffd953;
   padding: 16px;
@@ -60,20 +85,25 @@
     3px 3px 6px rgba(105, 129, 162, 0.2);
 }
 
-.rock1 {
-  position: absolute;
-  width: 20%;
-  left: 10%;
-  bottom: 0;
+.footer {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
 }
 
-.rock2 {
+#rock1 {
+  width: 20vw;
+}
+
+#rock2 {
   width: 10%;
 }
 
-.rock3 {
-  position: absolute;
-  width: 10%;
-  right: 10%;
-  bottom: 5%;
+#rock3 {
+  display: block;
+  transform: translate(5vw);
+  width: 10vw;
+  height: 10vw;
+  align-self: flex-end;
 }
