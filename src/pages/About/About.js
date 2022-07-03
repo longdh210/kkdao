@@ -1,12 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import SocialButtons from "../../components/SocialButtons";
 import BackButton from "../../assets/back-button.svg";
 import Rock01 from "../../assets/KKDAO_Rock/Rock01.png";
 import Rock02 from "../../assets/KKDAO_Rock/Rock02.png";
 import Rock03 from "../../assets/KKDAO_Rock/Rock03.png";
 import { motion } from "framer-motion";
-import { Reveal } from "react-text-reveal";
 
 import "./About.css";
 
@@ -14,7 +12,13 @@ const About = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="about-root-container">
+    <motion.div
+      className="about-root-container"
+      drag="x"
+      onDragEnd={() => {
+        navigate("/focus");
+      }}
+    >
       <div id="backgroundContainer">
         <div id="rockHeaderContainer">
           <SocialButtons leftIcon={<BackIcon />} />
@@ -77,7 +81,7 @@ const About = () => {
           </motion.button>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
