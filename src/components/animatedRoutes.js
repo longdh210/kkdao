@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import SignUp from "../pages/SignUp/SignUp";
 import Investor from "../pages/Investor/Investor";
+import FocusPage from "../pages/Focus/focus";
 
 import { AnimatePresence } from "framer-motion";
 import About from "../pages/About/About";
@@ -22,6 +23,7 @@ function AnimatedRoutes() {
         />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/investor" element={<Investor />} />
+        <Route path="focus" element={<FocusPage />} />
       </Routes>
     </AnimatePresence>
   );
