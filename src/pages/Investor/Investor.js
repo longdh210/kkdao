@@ -1,12 +1,18 @@
 import "./Investor.css";
 import BackgroundVideo from "./../../assets/video/Section3BG.mov";
 import { useState } from "react";
+import Rock4 from "./../../assets/KKDAO_Rock/Rock04.png";
+import Rock5 from "./../../assets/KKDAO_Rock/Rock05.png";
 
 const Investor = () => {
   const [isDone, setIsDone] = useState(false);
 
   return (
     <div id="rootContainer">
+      <div id="rocksLayer">
+        <img src={Rock4} alt="Rock4" id="rock4" />
+        <img src={Rock5} alt="Rock5" id="rock5" />
+      </div>
       <video
         src={BackgroundVideo}
         autoPlay

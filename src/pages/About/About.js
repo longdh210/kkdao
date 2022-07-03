@@ -11,7 +11,7 @@ const About = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="Container">
+    <div className="rootContainer">
       <div id="backgroundContainer">
         <div id="rockHeaderContainer">
           <SocialButtons leftIcon={<BackIcon />} />
