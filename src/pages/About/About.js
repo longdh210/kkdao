@@ -36,7 +36,7 @@ const About = () => {
             (centralized finance), Web3 Apps, Infrastructure, Wallet, Gaming,
             and NFT.
           </p>
-          <button id="shareInnovationBtn" onClick={() => navigate("/signup")}>
+          <button id="shareInnovationBtn" onClick={() => navigate("/investor")}>
             <b>Share your innovation here!</b>
           </button>
         </div>
