@@ -18,7 +18,7 @@ const Investor = () => {
         autoPlay
         muted
         onEnded={() => setIsDone(true)}
-        id="video"
+        id="investor-video"
       />
 
       {isDone && (
