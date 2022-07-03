@@ -84,10 +84,11 @@
 
 .mainContent {
   display: flex;
-  font-family: SFUFutura;
+  /* font-family: SFUFutura; */
   font-weight: 400;
   float: right;
   margin-left: 58vw;
+  font-style: normal;
 }
 
 .wrapButton {
@@ -108,6 +109,18 @@
   border-radius: 15px;
   font-weight: bold;
   font-size: 16px;
+}
+
+.rockLandingPage {
+  position: absolute;
+  display: flex;
+  /* background-color: black; */
+  float: right;
+  margin-left: 58vw;
+  width: 22%;
+  height: 55%;
+  top: 20%;
+  right: 38%;
 }
 
 @font-face {
