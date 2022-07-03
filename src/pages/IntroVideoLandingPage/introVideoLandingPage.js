@@ -10,20 +10,9 @@ import { motion } from "framer-motion";
 function IntroVideo1() {
     const [isDone, setIsDone] = useState(false);
     const [zoom, setZoom] = useState(false);
+    const [currentVideo, setCurrentVideo] = useState(IntroVideo);
     const navigate = useNavigate();
 
-    if (zoom == true)
-        return (
-            <div className='zoomAboutPage'>
-                <video
-                    id='intro-video'
-                    src={ZoomVideo}
-                    autoPlay
-                    muted
-                    onEnded={() => navigate("/about")}
-                />
-            </div>
-        );
     return (
         <motion.div
             className='intro'
@@ -33,19 +22,32 @@ function IntroVideo1() {
             drag='x'
             onDragEnd={(event, info) => navigate("/about")}
         >
-            <video
-                src={IntroVideo}
-                autoPlay
-                muted
-                onEnded={() => setIsDone(true)}
-                id='intro-video'
-            />
+            {zoom ? (
+                <div className='zoomAboutPage'>
+                    <video
+                        id='intro-video'
+                        src={ZoomVideo}
+                        autoPlay
+                        muted
+                        onEnded={() => navigate("/about")}
+                    />
+                </div>
+            ) : (
+                <video
+                    src={IntroVideo}
+                    autoPlay
+                    muted
+                    onEnded={() => setIsDone(true)}
+                    id='intro-video'
+                />
+            )}
             {isDone ? (
                 <motion.div
                     className='content'
                     initial={{ opacity: 0, transition: { duation: 1 }, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
+                    {/* <div className='rockLandingPage'>hadjasjd</div> */}
                     <SocialButtons leftIcon={<Logo />} />
                     <motion.h1
                         className='title'
@@ -58,6 +60,10 @@ function IntroVideo1() {
                     >
                         K&nbsp;&nbsp;K&nbsp;&nbsp;D&nbsp;&nbsp;A&nbsp;&nbsp;O
                     </motion.h1>
+                    <div
+                        className='rockLandingPage'
+                        onClick={() => setZoom(true)}
+                    ></div>
                     <motion.div
                         className='mainContent'
                         initial={{
@@ -68,7 +74,11 @@ function IntroVideo1() {
                         animate={{ opacity: 1, y: 0 }}
                     >
                         <p>
-                            FIRST DAO RUN BY A VC FIRM<br></br>IN SOUTHEAST ASIA{" "}
+                            <b style={{ fontFamily: "SFUFutura" }}>FIRST DAO</b>{" "}
+                            RUN BY A VC FIRM<br></br>IN{" "}
+                            <b style={{ fontFamily: "SFUFutura" }}>
+                                SOUTHEAST ASIA
+                            </b>{" "}
                         </p>
                     </motion.div>
                     <motion.div
