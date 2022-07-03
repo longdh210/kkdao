@@ -1,4 +1,4 @@
-.root {
+.rootContainer {
   background-image: url("../../assets/about-bg.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -7,6 +7,7 @@
   bottom: 0;
   left: 0;
   height: 100vh;
+  width: 100vw;
   position: relative;
 }
 
@@ -80,7 +81,7 @@
   border-radius: 16px;
 }
 
-.btn:hover {
+#shareInnovationBtn:hover {
   box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
     3px 3px 6px rgba(105, 129, 162, 0.2);
 }
@@ -94,16 +95,46 @@
 
 #rock1 {
   width: 20vw;
+  animation: rock1Animation 4s infinite linear alternate;
 }
 
 #rock2 {
-  width: 10%;
+  width: 8%;
+  animation: rock2Animation 4s infinite linear both;
+  margin-left: 10%;
 }
 
 #rock3 {
   display: block;
-  transform: translate(5vw);
   width: 10vw;
   height: 10vw;
   align-self: flex-end;
+  animation: rock3Animation 2s infinite linear both;
+}
+
+@keyframes rock1Animation {
+  from {
+    transform: translate(-10%, -15%);
+  }
+  to {
+    transform: translateX(10%, 15%);
+  }
+}
+
+@keyframes rock2Animation {
+  from {
+    transform: rotate(0deg) translate(-10%, -20%) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-10%, -20%) rotate(-360deg);
+  }
+}
+
+@keyframes rock3Animation {
+  from {
+    transform: rotate(0deg) translate(-0%, -10%) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-0%, -10%) rotate(-360deg);
+  }
 }
