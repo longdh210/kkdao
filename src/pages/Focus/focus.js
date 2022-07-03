@@ -3,10 +3,10 @@ import Daos from "../../assets/Frame 54.svg";
 import Defi from "../../assets/Frame 55.svg";
 import Cefi from "../../assets/Frame 53.svg";
 import Web3App from "../../assets/Frame 56.svg";
-import NFT from "../../assets/Frame 54 (1).svg";
-import Wallet from "../../assets/Frame 55 (1).svg";
-import Infratructure from "../../assets/Frame 53 (1).svg";
-import Gaming from "../../assets/Frame 56 (1).svg";
+import NFT from "../../assets/NFT.svg";
+import Wallet from "../../assets/Wallet.svg";
+import Infratructure from "../../assets/Infra.svg";
+import Gaming from "../../assets/Gaming.svg";
 
 import DaosImg from "../../assets/DAOs.png";
 import DefiImg from "../../assets/DeFi.png";
