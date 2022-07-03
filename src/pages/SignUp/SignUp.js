@@ -1,8 +1,10 @@
 import "./SignUp.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Rock5 from "../../assets/KKDAO_Rock/Rock05.png";
 import Rock6 from "../../assets/KKDAO_Rock/Rock06.png";
 import Rock7 from "../../assets/KKDAO_Rock/Rock07.png";
+import Close from "../../assets/close.svg";
 
 const SignUp = () => {
   const [isShowingForm, setIsShowingForm] = useState(false);
@@ -15,7 +17,7 @@ const SignUp = () => {
         <img src={Rock7} alt="Rock7" id="rock7" />
       </div>
       {isShowingForm ? (
-        <Form />
+        <Form setIsShowingForm={setIsShowingForm} />
       ) : (
         <div id="signUpWrapper">
           <h1 id="signup" onClick={() => setIsShowingForm(true)}>
@@ -27,39 +29,63 @@ const SignUp = () => {
   );
 };
 
-const Form = () => {
+const Form = ({ setIsShowingForm }) => {
+  const navigate = useNavigate();
+
   return (
-    <form id="form" action="/">
-      <h1 id="formTitle">SIGN UP</h1>
-      <input type="text" placeholder="Project name:" required />
-      <br />
-      <input type="text" placeholder="Name:" required />
-      <br />
+    <div id="formContainer">
+      <img
+        src={Close}
+        alt="Close Form"
+        id="close"
+        onClick={() => setIsShowingForm(false)}
+      />
+      <form id="formControl" action="/">
+        <br />
+        <h1 id="formTitle">SIGN UP</h1>
+        <br />
 
-      <div id="additionalInfoContainer">
         <input
           type="text"
-          placeholder="Email:"
+          placeholder="Project name:"
           required
-          className="horizontalInput"
+          className="formInput verticalInput"
         />
-        <input
-          type="text"
-          placeholder="Phone:"
-          required
-          className="horizontalInput"
-        />
-        <input
-          type="text"
-          placeholder="Project Description:"
-          required
-          className="horizontalInput"
-        />
-      </div>
-      <br />
+        <br />
+        <div id="additionalInfoContainer">
+          <input
+            type="text"
+            placeholder="Name:"
+            required
+            className="formInput horizontalInput"
+          />
+          <input
+            type="text"
+            placeholder="Email:"
+            required
+            className="formInput horizontalInput"
+          />
 
-      <input type="submit" value="SEND" />
-    </form>
+          <input
+            type="text"
+            placeholder="Phone:"
+            required
+            className="formInput horizontalInput"
+          />
+        </div>
+        <br />
+        <textarea
+          name="Project description"
+          rows="5"
+          cols="30"
+          className="formInput"
+          id="projectDescriptionInput"
+          placeholder="Project Description"
+        />
+        <br />
+        <input type="submit" value="SEND" id="sendBtn" />
+      </form>
+    </div>
   );
 };
 
