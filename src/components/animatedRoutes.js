@@ -2,10 +2,11 @@ import Loading from "../pages/Loading/loading";
 import IntroVideoLandingPage from "../pages/IntroVideoLandingPage/introVideoLandingPage";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import { AnimatePresence } from "framer-motion";
-import About from "../pages/About/About";
 import SignUp from "../pages/SignUp/SignUp";
 import Investor from "../pages/Investor/Investor";
+
+import { AnimatePresence } from "framer-motion";
+import About from "../pages/About/About";
 
 function AnimatedRoutes() {
   const location = useLocation();
