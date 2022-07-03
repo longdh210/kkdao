@@ -45,6 +45,42 @@ const SignUp = () => {
 const Form = ({ setIsShowingForm }) => {
   const navigate = useNavigate();
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const projectName = event.target.projectName.value;
+    const email = event.target.email.value;
+    const phone = event.target.phone.value;
+    const description = event.target.description.value;
+
+    const info = {
+      name: name,
+      projectName: projectName,
+      email: email,
+      phone: phone,
+      description: description,
+    };
+    window.open(
+      `mailto:info@kkfund.co?subject=Register&body=${
+        "Name: " +
+        name +
+        ", " +
+        "Project name: " +
+        projectName +
+        ", " +
+        "Email: " +
+        email +
+        ", " +
+        "Phone: " +
+        phone +
+        ", " +
+        "Project description: " +
+        description +
+        ", "
+      }`
+    );
+  };
+
   return (
     <motion.div
       id="formContainer"
@@ -64,7 +100,7 @@ const Form = ({ setIsShowingForm }) => {
         id="close"
         onClick={() => setIsShowingForm(false)}
       />
-      <form id="formControl" action="/">
+      <form id="formControl" onSubmit={handleSubmit}>
         <br />
         <h1 id="formTitle">SIGN UP</h1>
         <br />
@@ -73,6 +109,7 @@ const Form = ({ setIsShowingForm }) => {
           type="text"
           placeholder="Project name:"
           required
+          name="projectName"
           className="formInput verticalInput"
         />
         <br />
@@ -82,12 +119,14 @@ const Form = ({ setIsShowingForm }) => {
             placeholder="Name:"
             required
             className="formInput horizontalInput"
+            name="name"
           />
           <input
             type="text"
             placeholder="Email:"
             required
             className="formInput horizontalInput"
+            name="email"
           />
 
           <input
@@ -95,11 +134,12 @@ const Form = ({ setIsShowingForm }) => {
             placeholder="Phone:"
             required
             className="formInput horizontalInput"
+            name="phone"
           />
         </div>
         <br />
         <textarea
-          name="Project description"
+          name="description"
           rows="5"
           cols="30"
           className="formInput"
