@@ -8,10 +8,10 @@ const Investor = () => {
   const [isDone, setIsDone] = useState(false);
 
   return (
-    <div id="rootContainer">
-      <div id="rocksLayer">
-        <img src={Rock4} alt="Rock4" id="rock4" />
-        <img src={Rock5} alt="Rock5" id="rock5" />
+    <div id="investor-root-container">
+      <div id="investor-rocks-layer">
+        <img src={Rock4} alt="Rock4" id="investor-rock4" />
+        <img src={Rock5} alt="Rock5" id="investor-rock5" />
       </div>
       <video
         src={BackgroundVideo}

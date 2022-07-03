@@ -1,4 +1,4 @@
-#rootContainer {
+#investor-root-container {
   /* background-image: url("../../assets/investor-bg.svg");
   background-size: contain;
   background-repeat: no-repeat; */
@@ -13,17 +13,17 @@
   align-items: center;
 }
 
-#rocksLayer {
+#investor-rocks-layer {
   z-index: 2;
   position: absolute;
 }
 
-#rock4 {
+#investor-rock4 {
   width: 20%;
-  animation: rock4Animation 4s infinite linear both;
+  animation: investor-rock4-animation 4s infinite linear both;
 }
 
-@keyframes rock4Animation {
+@keyframes investor-rock4-animation {
   from {
     transform: rotate(0deg) translate(-0%, -10%) rotate(0deg);
   }
@@ -32,16 +32,16 @@
   }
 }
 
-#rock5 {
+#investor-rock5 {
   position: absolute;
   width: 10%;
   right: 0;
   margin-right: -5%;
 
-  animation: rock5Animation 4s infinite linear alternate;
+  animation: investor-rock5-animation 4s infinite linear alternate;
 }
 
-@keyframes rock5Animation {
+@keyframes investor-rock5-animation {
   from {
     transform: translateY(-20%) rotate(0deg) translateX(10%) rotate(0deg)
       scale(1);
@@ -63,12 +63,15 @@
 #titleText {
   font-size: xx-large;
   margin-top: 4%;
+  margin-left: 4%;
 }
 
 #subtitleText {
   width: 30%;
   text-align: center;
   font-weight: 400;
+  margin-left: 4%;
+
   letter-spacing: -0.01em;
 }
 

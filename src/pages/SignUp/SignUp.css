@@ -1,4 +1,4 @@
-#rootContainer {
+#sign-up-root-container {
   top: 0;
   right: 0;
   bottom: 0;
@@ -17,12 +17,12 @@
   align-items: center;
 }
 
-#rocksLayer {
+#sign-up-rocks-layer {
   width: 100vw;
   height: 100vh;
 }
 
-#rock5 {
+#signup-rock5 {
   margin-left: 5vw;
   position: absolute;
   width: 10%;
@@ -41,7 +41,7 @@
   }
 }
 
-#rock6 {
+#signup-rock6 {
   bottom: 10vh;
   left: 20vw;
   position: absolute;
@@ -59,7 +59,7 @@
   }
 }
 
-#rock7 {
+#signup-rock7 {
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -83,6 +83,7 @@
 #signUpWrapper {
   position: absolute;
   bottom: 10vh;
+  z-index: 2;
 }
 
 #signup {
@@ -93,12 +94,21 @@
   text-transform: uppercase;
 }
 
+#formParentLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 #formContainer {
+  align-self: center;
   position: absolute;
   width: 50%;
   background: rgba(255, 255, 255, 0.49);
   border-radius: 16px;
   backdrop-filter: blur(6px);
+  z-index: 2;
 
   display: flex;
   flex-direction: column;

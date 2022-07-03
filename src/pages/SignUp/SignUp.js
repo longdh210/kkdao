@@ -10,11 +10,11 @@ const SignUp = () => {
   const [isShowingForm, setIsShowingForm] = useState(false);
 
   return (
-    <div id="rootContainer">
-      <div id="rocksLayer">
-        <img src={Rock5} alt="Rock5" id="rock5" />
-        <img src={Rock6} alt="Rock6" id="rock6" />
-        <img src={Rock7} alt="Rock7" id="rock7" />
+    <div id="sign-up-root-container">
+      <div id="sign-up-rocks-layer">
+        <img src={Rock5} alt="Rock5" id="signup-rock5" />
+        <img src={Rock6} alt="Rock6" id="signup-rock6" />
+        <img src={Rock7} alt="Rock7" id="signup-rock7" />
       </div>
       {isShowingForm ? (
         <Form setIsShowingForm={setIsShowingForm} />
