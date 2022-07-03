@@ -5,6 +5,7 @@ import Rock5 from "../../assets/KKDAO_Rock/Rock05.png";
 import Rock6 from "../../assets/KKDAO_Rock/Rock06.png";
 import Rock7 from "../../assets/KKDAO_Rock/Rock07.png";
 import Close from "../../assets/close.svg";
+import { motion } from "framer-motion";
 
 const SignUp = () => {
   const [isShowingForm, setIsShowingForm] = useState(false);
@@ -20,9 +21,21 @@ const SignUp = () => {
         <Form setIsShowingForm={setIsShowingForm} />
       ) : (
         <div id="signUpWrapper">
-          <h1 id="signup" onClick={() => setIsShowingForm(true)}>
+          <motion.h1
+            id="signup"
+            onClick={() => setIsShowingForm(true)}
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            transition={{ duration: 1 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+          >
             SIGN UP
-          </h1>
+          </motion.h1>
         </div>
       )}
     </div>
@@ -33,7 +46,18 @@ const Form = ({ setIsShowingForm }) => {
   const navigate = useNavigate();
 
   return (
-    <div id="formContainer">
+    <motion.div
+      id="formContainer"
+      initial={{
+        opacity: 0,
+        y: 50,
+      }}
+      transition={{ duration: 1 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+    >
       <img
         src={Close}
         alt="Close Form"
@@ -85,7 +109,7 @@ const Form = ({ setIsShowingForm }) => {
         <br />
         <input type="submit" value="SEND" id="sendBtn" />
       </form>
-    </div>
+    </motion.div>
   );
 };
 
