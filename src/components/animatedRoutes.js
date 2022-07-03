@@ -6,8 +6,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { AnimatePresence } from "framer-motion";
 import About from "../pages/About/About";
-import SignUp from "../pages/SignUp/SignUp";
-import Investor from "../pages/Investor/Investor";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -22,9 +20,7 @@ function AnimatedRoutes() {
           element={<IntroVideoLandingPage />}
         />
         <Route path="zoomaboutpage" element={<ZoomAboutPage />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/investor" element={<Investor />} />
-        <Route path="focus" element={<FocusPage />} />
+        <Route path="focus" element={<FocusPage/>}/>
       </Routes>
     </AnimatePresence>
   );
