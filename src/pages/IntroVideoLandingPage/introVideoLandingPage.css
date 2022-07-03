@@ -1,104 +1,117 @@
 .intro {
-    width: 100vw;
-    display: block;
-    height: 100vh;
-    overflow: hidden;
+  width: 100vw;
+  display: block;
+  height: 100vh;
+  overflow: hidden;
 }
 
-#video {
-    position: absolute;
-    width: 100%;
-    left: 50%;
-    top: 50%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1000;
+.zoomAboutPage {
+  width: 100vw;
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}
 
+#intro-video {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1000;
 }
 
 .logo {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    z-index: 20;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  z-index: 20;
+  justify-content: space-between;
 }
 
 .kklogo {
-    margin-top: 20px;
-    margin-left: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .emailTwitter {
-    margin-top: 20px;
-    margin-right: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 .emailLogo {
-    /* margin-bottom: 10px; */
-    width: 45%;
-    /* height: 77px; */
-    margin-bottom: 5%;
+  /* margin-bottom: 10px; */
+  width: 45%;
+  /* height: 77px; */
+  margin-bottom: 5%;
 }
 
 .twitterLogo {
-    width: 55%;
+  width: 55%;
 }
 
 .content {
-    width: 100vw;
-    height: 80vh;
-    flex-direction: column;
-    display: flex;
+  width: 100vw;
+  height: 80vh;
+  flex-direction: column;
+  display: flex;
+  z-index: 1000;
 }
 
 .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 25%;
-    margin-bottom: 0;
-    font-family: SFUFutura;
-    font-size: 15vh;
-    background: linear-gradient(0deg, #FFFFFF 47.23%, rgba(255, 255, 255, 0.5) 94.32%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -text-fill-color: transparent;
-    text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 33px rgba(105, 129, 162, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 25%;
+  margin-bottom: 0;
+  font-family: SFUFutura;
+  font-size: 15vh;
+  background: linear-gradient(
+    0deg,
+    #ffffff 47.23%,
+    rgba(255, 255, 255, 0.5) 94.32%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -text-fill-color: transparent;
+  text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
+    3px 3px 33px rgba(105, 129, 162, 0.2);
 }
 
 .mainContent {
-    display: flex;
-    font-family: SFUFutura;
-    font-weight: 400;
-    float: right;
-    margin-left: 58vw;
+  display: flex;
+  font-family: SFUFutura;
+  font-weight: 400;
+  float: right;
+  margin-left: 58vw;
 }
 
 .wrapButton {
-    display: flex;
-    margin-left: 58vw;
+  display: flex;
+  margin-left: 58vw;
 }
 
 #button {
-    font-family: Montserrat;
-    width: 8vw;
-    height: 6vh;
-    background-color: #FFD953;
-    border: none;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 15px;
-    font-weight: bold;
-    font-size: 16px;
+  font-family: Montserrat;
+  width: 8vw;
+  height: 6vh;
+  background-color: #ffd953;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 @font-face {
-    font-family: 'SFUFutura';
-    src: local('SFUFutura'), url(../../assets/fonts/SFUFuturaBold.TTF) format('woff');
+  font-family: "SFUFutura";
+  src: local("SFUFutura"),
+    url(../../assets/fonts/SFUFuturaBold.TTF) format("woff");
 }
