@@ -20,110 +20,85 @@ function IntroVideo1() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             drag='x'
-            onDragEnd={() => {
-                navigate("/about");
-            }}
+            onDragEnd={(event, info) => navigate("/about")}
         >
-            <video
-                src={IntroVideo}
-                autoPlay
-                muted
-                onEnded={() => setIsDone(true)}
-                id='intro-video'
-            />
+            {zoom ? (
+                <div className='zoomAboutPage'>
+                    <video
+                        id='intro-video'
+                        src={ZoomVideo}
+                        autoPlay
+                        muted
+                        onEnded={() => navigate("/about")}
+                    />
+                </div>
+            ) : (
+                <video
+                    src={IntroVideo}
+                    autoPlay
+                    muted
+                    onEnded={() => setIsDone(true)}
+                    id='intro-video'
+                />
+            )}
             {isDone ? (
                 <motion.div
                     className='content'
                     initial={{ opacity: 0, transition: { duation: 1 }, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    {zoom ? (
-                        <div className='zoomAboutPage'>
-                            <video
-                                id='intro-video'
-                                src={ZoomVideo}
-                                autoPlay
-                                muted
-                                onEnded={() => navigate("/about")}
-                            />
-                        </div>
-                    ) : (
-                        <video
-                            src={IntroVideo}
-                            autoPlay
-                            muted
-                            onEnded={() => setIsDone(true)}
-                            id='intro-video'
-                        />
-                    )}
-                    {isDone ? (
-                        <motion.div
-                            className='content'
-                            initial={{
-                                opacity: 0,
-                                transition: { duation: 1 },
-                                y: 100,
+                    {/* <div className='rockLandingPage'>hadjasjd</div> */}
+                    <SocialButtons leftIcon={<Logo />} />
+                    <motion.h1
+                        className='title'
+                        initial={{
+                            opacity: 0,
+                            transition: { duation: 1 },
+                            y: 100,
+                        }}
+                        animate={{ opacity: 1, y: 0 }}
+                    >
+                        K&nbsp;&nbsp;K&nbsp;&nbsp;D&nbsp;&nbsp;A&nbsp;&nbsp;O
+                    </motion.h1>
+                    <div
+                        className='rockLandingPage'
+                        onClick={() => setZoom(true)}
+                    ></div>
+                    <motion.div
+                        className='mainContent'
+                        initial={{
+                            opacity: 0,
+                            transition: { duation: 1.5 },
+                            y: 100,
+                        }}
+                        animate={{ opacity: 1, y: 0 }}
+                    >
+                        <p>
+                            <b style={{ fontFamily: "SFUFutura" }}>FIRST DAO</b>{" "}
+                            RUN BY A VC FIRM<br></br>IN{" "}
+                            <b style={{ fontFamily: "SFUFutura" }}>
+                                SOUTHEAST ASIA
+                            </b>{" "}
+                        </p>
+                    </motion.div>
+                    <motion.div
+                        className='wrapButton'
+                        initial={{
+                            opacity: 0,
+                            transition: { duation: 2 },
+                            y: 100,
+                        }}
+                        animate={{ opacity: 1, y: 0 }}
+                    >
+                        <button
+                            id='button'
+                            onClick={() => {
+                                setZoom(true);
                             }}
-                            animate={{ opacity: 1, y: 0 }}
                         >
-                            {/* <div className='rockLandingPage'>hadjasjd</div> */}
-                            <SocialButtons leftIcon={<Logo />} />
-                            <motion.h1
-                                className='title'
-                                initial={{
-                                    opacity: 0,
-                                    transition: { duation: 1 },
-                                    y: 100,
-                                }}
-                                animate={{ opacity: 1, y: 0 }}
-                            >
-                                K&nbsp;&nbsp;K&nbsp;&nbsp;D&nbsp;&nbsp;A&nbsp;&nbsp;O
-                            </motion.h1>
-                            <div
-                                className='rockLandingPage'
-                                onClick={() => setZoom(true)}
-                            ></div>
-                            <motion.div
-                                className='mainContent'
-                                initial={{
-                                    opacity: 0,
-                                    transition: { duation: 1.5 },
-                                    y: 100,
-                                }}
-                                animate={{ opacity: 1, y: 0 }}
-                            >
-                                <p>
-                                    <b style={{ fontFamily: "SFUFutura" }}>
-                                        FIRST DAO
-                                    </b>{" "}
-                                    RUN BY A VC FIRM<br></br>IN{" "}
-                                    <b style={{ fontFamily: "SFUFutura" }}>
-                                        SOUTHEAST ASIA
-                                    </b>{" "}
-                                </p>
-                            </motion.div>
-                            <motion.div
-                                className='wrapButton'
-                                initial={{
-                                    opacity: 0,
-                                    transition: { duation: 2 },
-                                    y: 100,
-                                }}
-                                animate={{ opacity: 1, y: 0 }}
-                            >
-                                <button
-                                    id='button'
-                                    onClick={() => {
-                                        setZoom(true);
-                                    }}
-                                >
-                                    STEP IN
-                                </button>
-                            </motion.div>
-                        </motion.div>
-                    ) : (
-                        <></>
-                    )}
+                            STEP IN
+                        </button>
+                    </motion.div>
                 </motion.div>
             ) : (
                 <></>
