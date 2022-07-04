@@ -4,6 +4,7 @@ import { useState } from "react";
 import Rock4 from "./../../assets/KKDAO_Rock/Rock04.png";
 import Rock5 from "./../../assets/KKDAO_Rock/Rock05.png";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Investor = ({ goToSignUp }) => {
   const [isDone, setIsDone] = useState(false);

@@ -12,7 +12,13 @@ const About = ({ goToFocus }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="about-root-container">
+    <motion.div
+      className="about-root-container"
+      drag="x"
+      onDragEnd={() => {
+        navigate("/focus");
+      }}
+    >
       <div id="backgroundContainer">
         <div id="rockHeaderContainer">
           <SocialButtons leftIcon={<BackIcon />} />
@@ -75,7 +81,7 @@ const About = ({ goToFocus }) => {
           </motion.button>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

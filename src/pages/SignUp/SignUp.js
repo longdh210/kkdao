@@ -81,6 +81,42 @@ const Form = ({ setIsShowingForm }) => {
     );
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const projectName = event.target.projectName.value;
+    const email = event.target.email.value;
+    const phone = event.target.phone.value;
+    const description = event.target.description.value;
+
+    const info = {
+      name: name,
+      projectName: projectName,
+      email: email,
+      phone: phone,
+      description: description,
+    };
+    window.open(
+      `mailto:info@kkfund.co?subject=Register&body=${
+        "Name: " +
+        name +
+        ", " +
+        "Project name: " +
+        projectName +
+        ", " +
+        "Email: " +
+        email +
+        ", " +
+        "Phone: " +
+        phone +
+        ", " +
+        "Project description: " +
+        description +
+        ", "
+      }`
+    );
+  };
+
   return (
     <motion.div
       id="formContainer"
