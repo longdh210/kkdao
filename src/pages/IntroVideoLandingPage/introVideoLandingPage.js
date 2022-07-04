@@ -1,17 +1,17 @@
 import KKLogo from "../../assets/kkLogo.png";
 import IntroVideo from "../../assets/video/1920x1080-Vien-da.mp4";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./introVideoLandingPage.css";
 import SocialButtons from "../../components/SocialButtons";
 import ZoomVideo from "../../assets/video/1920x1080-Zoom.mp4";
 import { motion } from "framer-motion";
 
-function IntroVideo1() {
+function LandingPage({ ZoomToWrap }) {
     const [isDone, setIsDone] = useState(false);
     const [zoom, setZoom] = useState(false);
     const [currentVideo, setCurrentVideo] = useState(IntroVideo);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     return (
         <motion.div
@@ -20,7 +20,7 @@ function IntroVideo1() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             drag='x'
-            onDragEnd={(event, info) => navigate("/about")}
+            // onDragEnd={(event, info) => navigate("/about")}
         >
             {zoom ? (
                 <div className='zoomAboutPage'>
@@ -29,7 +29,7 @@ function IntroVideo1() {
                         src={ZoomVideo}
                         autoPlay
                         muted
-                        onEnded={() => navigate("/about")}
+                        onEnded={() => ZoomToWrap()}
                     />
                 </div>
             ) : (
@@ -47,7 +47,6 @@ function IntroVideo1() {
                     initial={{ opacity: 0, transition: { duation: 1 }, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    {/* <div className='rockLandingPage'>hadjasjd</div> */}
                     <SocialButtons leftIcon={<Logo />} />
                     <motion.h1
                         className='title'
@@ -113,4 +112,4 @@ const Logo = () => (
     </div>
 );
 
-export default IntroVideo1;
+export default LandingPage;

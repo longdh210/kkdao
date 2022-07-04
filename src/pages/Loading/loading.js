@@ -3,11 +3,11 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-function Loading() {
+function Loading({ LoadingToWrap }) {
     const [value, setValue] = useState(0);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     useEffect(() => {
         const timerId = setTimeout(() => {
@@ -16,7 +16,8 @@ function Loading() {
 
         if (value == 100) {
             clearTimeout(timerId);
-            navigate("/introvideolandingpage");
+            // navigate("/introvideolandingpage");
+            LoadingToWrap();
         }
 
         return () => clearTimeout(timerId);
