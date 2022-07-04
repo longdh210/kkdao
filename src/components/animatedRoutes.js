@@ -8,6 +8,7 @@ import FocusPage from "../pages/Focus/focus";
 
 import { AnimatePresence } from "framer-motion";
 import About from "../pages/About/About";
+import PageWrapper from "./../pages/PageWrapper/PageWrapper";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -15,7 +16,8 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Loading />} />
+        <Route path="/" element={<PageWrapper />} />
+        {/* <Route path="/" element={<Loading />} /> */}
         <Route path="/about" element={<About />} />
         <Route
           path="/introvideolandingpage"

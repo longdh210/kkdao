@@ -5,11 +5,19 @@ import Rock4 from "./../../assets/KKDAO_Rock/Rock04.png";
 import Rock5 from "./../../assets/KKDAO_Rock/Rock05.png";
 import { motion } from "framer-motion";
 
-const Investor = () => {
+const Investor = ({ goToSignUp }) => {
   const [isDone, setIsDone] = useState(false);
 
+  // const navigate = useNavigate();
+
   return (
-    <div id="investor-root-container">
+    <motion.div
+      id="investor-root-container"
+      drag="x"
+      // onDragEnd={() => {
+      //   navigate("/signup");
+      // }}
+    >
       <div id="investor-rocks-layer">
         <img src={Rock4} alt="Rock4" id="investor-rock4" />
         <img src={Rock5} alt="Rock5" id="investor-rock5" />
@@ -25,6 +33,7 @@ const Investor = () => {
       {isDone && (
         <div id="infoContainer">
           <motion.h1
+            onClick={() => goToSignUp()}
             id="titleText"
             initial={{
               opacity: 0,
@@ -73,7 +82,7 @@ const Investor = () => {
           </motion.p>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

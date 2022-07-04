@@ -7,6 +7,10 @@
   bottom: 0;
   left: 0;
   width: 100vw;
+  height: 100vh;
+
+  display: inline-block;
+  position: relative;
 }
 
 #investor-rocks-layer {
@@ -76,6 +80,8 @@
   width: 30%;
   text-align: center;
   font-weight: 400;
+
+  white-space: normal;
 
   letter-spacing: -0.01em;
 }
