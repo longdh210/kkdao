@@ -10,17 +10,42 @@ import { motion } from "framer-motion";
 function LandingPage({ onFinished }) {
   const [isDone, setIsDone] = useState(false);
   const [zoom, setZoom] = useState(false);
-  const [currentVideo, setCurrentVideo] = useState(IntroVideo);
+
+  const [coord, setCoord] = useState({ x: 0, y: 0 });
+  const [currentImage, setCurrentImage] = useState(50);
+  const handleMouseMove = (e) => {
+    if (coord.x < e.screenX) {
+      if (currentImage === 100) return;
+      setCurrentImage(currentImage + 1);
+    } else if (coord.x > e.screenX) {
+      if (currentImage === 0) return;
+      setCurrentImage(currentImage - 1);
+    }
+    setCoord({ x: e.screenX, y: e.screenY });
+  };
 
   return (
     <motion.div
+      onMouseMove={handleMouseMove}
       className="intro"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -100 }}
       // drag="x"
     >
-      {zoom ? (
+      {isDone && zoom === false && (
+        <div id="intro-center-rock-background">
+          <img
+            src={require(`../../assets/intro-rock-500x700/500x700\ Da\ tach\ nen_00` +
+              currentImage.toString().padStart(3, "0") +
+              ".png")}
+            alt="background"
+            id="intro-center-rock"
+          />
+        </div>
+      )}
+
+      {zoom && isDone && (
         <div className="zoomAboutPage">
           <video
             id="intro-video"
@@ -30,7 +55,8 @@ function LandingPage({ onFinished }) {
             onEnded={() => onFinished()}
           />
         </div>
-      ) : (
+      )}
+      {!isDone && !zoom && (
         <video
           src={IntroVideo}
           autoPlay
@@ -39,7 +65,7 @@ function LandingPage({ onFinished }) {
           id="intro-video"
         />
       )}
-      {isDone ? (
+      {isDone && zoom === false && (
         <motion.div
           className="content"
           initial={{ opacity: 0, transition: { duation: 1 }, y: 100 }}
@@ -92,8 +118,6 @@ function LandingPage({ onFinished }) {
             </button>
           </motion.div>
         </motion.div>
-      ) : (
-        <></>
       )}
     </motion.div>
   );
