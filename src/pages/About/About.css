@@ -55,25 +55,29 @@
     #cbccce 100%
   );
   text-align: center;
-  font-size: 40px;
+  font-size: 10vh;
   max-lines: 1;
   letter-spacing: 30px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-family: SFUFuturaRegular;
+  font-weight: 400;
+  margin-top: 150px;
+  margin-bottom: 0;
 }
 
 #subtitleContainer {
-  width: 30%;
+  width: 35%;
   transform: translateX(50%);
-
   white-space: normal;
+  margin-left: 15%;
 }
 
 #subtitle {
   text-align: justify;
   font-size: medium;
-  line-height: 160%;
+  line-height: 100%;
 }
 
 #shareInnovationBtn {
@@ -84,6 +88,7 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   border-radius: 16px;
+  font-family: MontserratBold;
 }
 
 .btn:hover {
@@ -144,4 +149,28 @@
   to {
     transform: rotate(0deg) translate(-0%, -10%) scale(1.1) rotate(0deg);
   }
+}
+
+@font-face {
+  font-family: "SFUFuturaBold";
+  src: local("SFUFuturaBold"),
+    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+}
+
+@font-face {
+  font-family: "SFUFuturaRegular";
+  src: local("SFUFuturaRegular"),
+    url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+}
+
+@font-face {
+  font-family: "MontserratRegular";
+  src: local("MontserratRegular"),
+    url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+}
+
+@font-face {
+  font-family: "MontserratBold";
+  src: local("MontserratBold"),
+    url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
 }

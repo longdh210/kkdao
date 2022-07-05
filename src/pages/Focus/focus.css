@@ -4,6 +4,7 @@
   width: 100vw;
   display: inline-block;
   overflow: hidden;
+  position: relative;
 }
 
 .titleFocus {
@@ -80,8 +81,14 @@
   width: 75%;
 }
 
+.socialButtonFocus {
+  position: absolute;
+  top: 0.1vh;
+  z-index: 2000;
+}
+
 @font-face {
   font-family: "SFUFutura";
   src: local("SFUFutura"),
-    url(../../assets/fonts/SFUFuturaBold.TTF) format("woff");
+    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
 }
