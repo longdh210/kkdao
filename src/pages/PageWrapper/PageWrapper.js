@@ -9,8 +9,10 @@ import "./PageWrapper.css";
 import LandingPage from "../IntroVideoLandingPage/introVideoLandingPage";
 
 import { useRef } from "react";
+import { useHorizontalScroll } from "./../../components/useHorizontal";
 
 const PageWrapper = () => {
+    // const scrollRef = useHorizontalScroll();
     // Refs
     const focusRef = useRef(null);
     const investorRef = useRef(null);

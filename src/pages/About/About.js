@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import SocialButtons from "../../components/SocialButtons";
 import BackButton from "../../assets/back-button.svg";
 import Rock01 from "../../assets/KKDAO_Rock/Rock01.png";
@@ -9,16 +8,8 @@ import { motion } from "framer-motion";
 import "./About.css";
 
 const About = ({ goToFocus }) => {
-    const navigate = useNavigate();
-
     return (
-        <motion.div
-            className='about-root-container'
-            drag='x'
-            onDragEnd={() => {
-                navigate("/focus");
-            }}
-        >
+        <motion.div className='about-root-container'>
             <div id='backgroundContainer'>
                 <div id='rockHeaderContainer'>
                     <SocialButtons leftIcon={<BackIcon />} />
@@ -100,15 +91,12 @@ const About = ({ goToFocus }) => {
 };
 
 const BackIcon = () => {
-    const navigate = useNavigate();
-
     return (
         <div>
             <img
                 src={BackButton}
                 alt='BackIcon'
                 className='backIcon'
-                onClick={() => navigate(-1)}
                 style={{ width: "90%" }}
             />
         </div>

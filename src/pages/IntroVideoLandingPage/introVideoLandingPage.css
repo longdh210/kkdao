@@ -5,6 +5,32 @@
   overflow: hidden;
 }
 
+#intro-center-rock-background {
+  background-image: url("../../assets/about-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  z-index: 0;
+}
+
+#intro-center-rock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  z-index: 0;
+}
+
 .zoomAboutPage {
   width: 100vw;
   display: block;
@@ -20,7 +46,7 @@
   height: 100%;
   object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: -1000;
+  z-index: 0;
 }
 
 .logo {
@@ -57,10 +83,11 @@
   height: 80vh;
   flex-direction: column;
   display: flex;
-  z-index: 1000;
+  z-index: 2;
 }
 
 .title {
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,6 +115,7 @@
   float: right;
   margin-left: 58vw;
   font-style: normal;
+  z-index: 2;
 }
 
 .wrapButton {
@@ -97,6 +125,7 @@
 
 #button {
   font-family: MontserratRegular;
+  z-index: 2;
   width: 8vw;
   height: 6vh;
   background-color: #ffd953;

@@ -4,10 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import Rock4 from "./../../assets/KKDAO_Rock/Rock04.png";
 import Rock5 from "./../../assets/KKDAO_Rock/Rock05.png";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import Logo from "../../assets/logoInvestor.svg";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import SocialButtons from "../../components/SocialButtons";
 import BackButton from "../../assets/back-button.svg";
 
@@ -17,30 +15,7 @@ const Investor = ({ goToSignUp }) => {
     const [isDone, setIsDone] = useState(false);
     const [logoIndex, setLogoIndex] = useState(0);
     const [firstLoad, setFirstLoad] = useState(true);
-    const navigate = useNavigate();
 
-    const removeAnimate = () => {
-        Array.from(document.querySelectorAll(".animate")).forEach((li) => {
-            console.log("li", li);
-            li.classList.remove("animate");
-        });
-    };
-
-    // const NextArrow = ({ onClick }) => {
-    //     return (
-    //         <div className='arrow next' onClick={onClick}>
-    //             <FaArrowRight />
-    //         </div>
-    //     );
-    // };
-
-    // const PrevArrow = ({ onClick }) => {
-    //     return (
-    //         <div className='arrow prev' onClick={onClick}>
-    //             <FaArrowLeft />
-    //         </div>
-    //     );
-    // };
     const settings = {
         infinite: true,
         lazyLoad: true,
@@ -174,16 +149,9 @@ const Investor = ({ goToSignUp }) => {
 };
 
 const BackIcon = () => {
-    const navigate = useNavigate();
-
     return (
         <div>
-            <img
-                src={BackButton}
-                alt='BackIcon'
-                className='backIcon'
-                onClick={() => navigate(-1)}
-            />
+            <img src={BackButton} alt='BackIcon' className='backIcon' />
         </div>
     );
 };

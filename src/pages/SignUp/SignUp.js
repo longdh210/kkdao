@@ -1,6 +1,5 @@
 import "./SignUp.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Rock5 from "../../assets/KKDAO_Rock/Rock05.png";
 import Rock6 from "../../assets/KKDAO_Rock/Rock06.png";
 import Rock7 from "../../assets/KKDAO_Rock/Rock07.png";
@@ -43,8 +42,6 @@ const SignUp = () => {
 };
 
 const Form = ({ setIsShowingForm }) => {
-    // const navigate = useNavigate();
-
     const handleSubmit = (event) => {
         event.preventDefault();
         const name = event.target.name.value;
