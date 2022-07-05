@@ -5,6 +5,7 @@ import { useState } from "react";
 import "./introVideoLandingPage.css";
 import SocialButtons from "../../components/SocialButtons";
 import ZoomVideo from "../../assets/video/1920x1080-Zoom.mp4";
+import BackgroundVideo from "../../assets/video/1920x1080-BACKGROUND.mp4";
 import { motion } from "framer-motion";
 
 function LandingPage({ onFinished }) {
@@ -42,6 +43,14 @@ function LandingPage({ onFinished }) {
                         alt='background'
                         id='intro-center-rock'
                     />
+                    <video
+                        id='intro-video2'
+                        src={BackgroundVideo}
+                        autoPlay
+                        muted
+                        loop
+                        // onEnded={() => onFinished()}
+                    ></video>
                 </div>
             )}
 
