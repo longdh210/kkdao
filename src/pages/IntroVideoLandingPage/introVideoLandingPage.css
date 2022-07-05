@@ -94,7 +94,7 @@
   text-align: center;
   margin-top: 25%;
   margin-bottom: 0;
-  font-family: SFUFutura;
+  font-family: SFUFuturaBold;
   font-size: 15vh;
   background: linear-gradient(
     0deg,
@@ -111,7 +111,6 @@
 
 .mainContent {
   display: flex;
-  /* font-family: SFUFutura; */
   font-weight: 400;
   float: right;
   margin-left: 58vw;
@@ -125,8 +124,8 @@
 }
 
 #button {
+  font-family: MontserratRegular;
   z-index: 2;
-  font-family: Montserrat;
   width: 8vw;
   height: 6vh;
   background-color: #ffd953;
@@ -138,6 +137,8 @@
   border-radius: 15px;
   font-weight: bold;
   font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .rockLandingPage {
@@ -153,7 +154,19 @@
 }
 
 @font-face {
-  font-family: "SFUFutura";
-  src: local("SFUFutura"),
-    url(../../assets/fonts/SFUFuturaBold.TTF) format("woff");
+  font-family: "SFUFuturaBold";
+  src: local("SFUFuturaBold"),
+    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+}
+
+@font-face {
+  font-family: "SFUFuturaRegular";
+  src: local("SFUFuturaRegular"),
+    url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+}
+
+@font-face {
+  font-family: "MontserratRegular";
+  src: local("MontserratRegular"),
+    url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
 }

@@ -1,3 +1,6 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 #investor-root-container {
   /* background-image: url("../../assets/investor-bg.svg");
   background-size: contain;
@@ -70,19 +73,25 @@
   align-items: center;
 }
 
+.socialButtonSignUp {
+  position: absolute;
+  top: 0.1vh;
+  z-index: 2;
+}
+
 #titleText {
-  margin-top: 2%;
+  margin-top: -2%;
   font-size: xx-large;
   text-align: center;
+  font-family: SFUFuturaBold;
 }
 
 #subtitleText {
-  width: 30%;
+  width: 35%;
   text-align: center;
   font-weight: 400;
-
+  font-family: MontserratRegular;
   white-space: normal;
-
   letter-spacing: -0.01em;
 }
 
@@ -93,8 +102,8 @@
 
   font-style: normal;
   font-weight: 400;
-  font-size: 135px;
-
+  font-size: 12vh;
+  font-family: SFUFuturaRegular;
   text-align: center;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -108,6 +117,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  margin-bottom: 1%;
 }
 
 #investor-video {
@@ -119,4 +129,100 @@
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+.carousel {
+  text-align: center;
+  align-items: center;
+  justify-content: center; 
+  width: 50%;
+  /* margin: 10rem auto; */
+  margin-right: 5%;
+  margin-top: 2%;
+  height: 570px;
+}
+
+.slide img {
+  width: 20vw;
+  /* object-fit: cover; */
+  margin: 0 auto;
+}
+
+.slide {
+  transform: scale(0.5);
+  transition: transform 300ms;
+  opacity: 0.5;
+}
+
+
+.activeSlide {
+  transform: scale(0.9);
+  opacity: 1;
+}
+
+.activeSlide .animate {
+  animation: rotateY-anim 0.25s 5;
+  transform-origin: center;
+  transition: transform 300ms;
+  animation-timing-function: cubic-bezier(0,0,0.5,1);
+}
+
+@keyframes rotateY-anim {
+	0% {
+		transform: rotateY(0deg);
+	}
+
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+
+@-webkit-keyframes rotateY {
+  to { -webkit-transform: rotateY(0deg); }
+}
+@keyframes rotateY {
+  to { transform: rotateY(306deg); }
+}
+
+.arrow {
+  background-color: #fff;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow svg {
+  transition: color 300ms;
+}
+
+.arrow svg:hover {
+  color: #68edff;
+}
+
+.next {
+  right: 0%;
+  top: 50%;
+}
+
+.prev {
+  left: 0%;
+  top: 50%;
+}
+
+@font-face {
+  font-family: "SFUFuturaBold";
+  src: local("SFUFuturaBold"),
+    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+}
+
+@font-face {
+  font-family: "SFUFuturaRegular";
+  src: local("SFUFuturaRegular"),
+    url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+}
+
+@font-face {
+  font-family: "MontserratRegular";
+  src: local("MontserratRegular"),
+    url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
 }
