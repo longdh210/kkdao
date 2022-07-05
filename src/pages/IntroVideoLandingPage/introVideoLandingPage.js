@@ -1,7 +1,7 @@
 import KKLogo from "../../assets/kkLogo.png";
 import IntroVideo from "../../assets/video/1920x1080-Vien-da.mp4";
 import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+// import { use } from "react-router-dom";
 import "./introVideoLandingPage.css";
 import SocialButtons from "../../components/SocialButtons";
 import ZoomVideo from "../../assets/video/1920x1080-Zoom.mp4";
@@ -11,7 +11,6 @@ function LandingPage({ onFinished }) {
   const [isDone, setIsDone] = useState(false);
   const [zoom, setZoom] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(IntroVideo);
-  // const navigate = useNavigate();
 
   return (
     <motion.div
@@ -19,8 +18,7 @@ function LandingPage({ onFinished }) {
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -100 }}
-      drag="x"
-      // onDragEnd={(event, info) => navigate("/about")}
+      // drag="x"
     >
       {zoom ? (
         <div className="zoomAboutPage">

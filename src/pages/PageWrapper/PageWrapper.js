@@ -9,8 +9,10 @@ import "./PageWrapper.css";
 import LandingPage from "../IntroVideoLandingPage/introVideoLandingPage";
 
 import { useRef } from "react";
+import { useHorizontalScroll } from "./../../components/useHorizontal";
 
 const PageWrapper = () => {
+  // const scrollRef = useHorizontalScroll();
   // Refs
   const focusRef = useRef(null);
   const investorRef = useRef(null);
@@ -55,7 +57,11 @@ const PageWrapper = () => {
   } else {
     return (
       <div>
-        <div id="page-wrapper-root">
+        <div
+          id="page-wrapper-root"
+          // ref={scrollRef}
+          // style={{ overflow: "auto" }}
+        >
           <div className="page-container">
             <About goToFocus={() => pageRefs[0].callback()} />
           </div>

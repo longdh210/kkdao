@@ -3,11 +3,9 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 function Loading({ onFinished }) {
   const [value, setValue] = useState(0);
-  // const navigate = useNavigate();
 
   useEffect(() => {
     const timerId = setTimeout(() => {
