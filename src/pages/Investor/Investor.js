@@ -56,9 +56,6 @@ const Investor = ({ goToSignUp }) => {
 
       {isDone && (
         <div id="infoContainer">
-          <div className="socialButtonInvestor">
-            <SocialButtons leftIcon={<BackIcon />}></SocialButtons>
-          </div>
           <motion.h1
             onClick={() => goToSignUp()}
             id="titleText"
@@ -72,7 +69,8 @@ const Investor = ({ goToSignUp }) => {
               x: 0,
             }}
           >
-            M&nbsp;I&nbsp;S&nbsp;T&nbsp;L&nbsp;E&nbsp;T&nbsp;O&nbsp;E
+            {/* M&nbsp;I&nbsp;S&nbsp;T&nbsp;L&nbsp;E&nbsp;T&nbsp;O&nbsp;E */}
+            MISTLETOE
           </motion.h1>
           <motion.p
             id="subtitleText"

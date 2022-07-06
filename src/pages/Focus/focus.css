@@ -1,180 +1,88 @@
-@media screen and (min-width: 1000px) {
-  .focusPage {
-    background: #ededed;
-    height: 100vh;
-    width: 100vw;
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-  }
+.focusPage {
+  background: #ededed;
+  height: 100vh;
+  width: 100vw;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
 
-  .titleFocus {
-    height: 20%;
-    font-family: SFUFutura;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 150%;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-  }
-
-  .titleFocus .child {
-    position: absolute;
-    margin-top: 5%;
-    margin-left: 15%;
-    width: 50%;
-  }
-
-  .titleFocus .child2 {
-    display: block;
-    height: 100%;
-    margin-left: 60%;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  .rock1 {
-    display: block;
-    height: 250%;
-    transform: translate(-10%, -50%);
-  }
-
-  .row1 {
-    display: flex;
-    flex-direction: row;
-    height: 40%;
-    width: 100vw;
-    margin-left: 3%;
-  }
-
-  .row2 {
-    display: flex;
-    flex-direction: row;
-    height: 40%;
-    width: 100vw;
-    margin-left: 3%;
-  }
-
-  .pillar {
-    width: 20%;
-    position: relative;
-    text-align: center;
-  }
-
-  .pillar .daos {
-    width: 130%;
-    margin-top: 70%;
-  }
-
-  .daosImg {
-    position: absolute;
-    width: 70%;
-    float: center;
-    margin-left: 50%;
-    top: 5px;
-  }
-
-  .daosImg:hover {
-    transform: translateY(-20px);
-    transition: 0.4s ease-out;
-    width: 75%;
-  }
-
-  .socialButtonFocus {
-    position: absolute;
-    top: 0.1vh;
-    z-index: 2000;
-  }
+  background-image: url("../../assets/focus-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 500px) {
-  .focusPage {
-    background: #ededed;
-    height: 100vh;
-    width: 100vw;
-    display: inline-block;
-    overflow: hidden;
-  }
+.titleFocus {
+  height: 20%;
+  font-family: SFUFutura;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 150%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
 
-  .titleFocus {
-    font-size: 6vw;
-    font-family: SFUFutura; 
-    text-align: center;
-    letter-spacing: 0.2em;
-    margin-top: 20%;
-  }
+.titleFocus .child {
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 15%;
+  width: 50%;
+}
 
-  .pillar {
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    right: 70%;
-    margin-top: 30%;
-  }
+.titleFocus .child2 {
+  display: block;
+  height: 100%;
+  margin-left: 60%;
+  margin-right: auto;
+  width: 50%;
+}
 
-  .pillar .daos {
-    width: 200%;
-    margin-top: 80%;
-  }
+.rock1 {
+  display: block;
+  height: 250%;
+  transform: translate(-10%, -50%);
+}
 
-  .daosImg {
-    position: absolute;
-    width: 90%;
-    float: center;
-    margin-left: 85%;
-    margin-bottom: 20px;
-    top: 5px;
-  }
+.row1 {
+  display: flex;
+  flex-direction: row;
+  height: 40%;
+  width: 100vw;
+  margin-left: 3%;
+}
 
-  .daosImg:hover {
-    transform: translateY(-20px);
-    transition: 0.4s ease-out;
-    width: 75%;
-  }
+.row2 {
+  display: flex;
+  flex-direction: row;
+  height: 40%;
+  width: 100vw;
+  margin-left: 3%;
+}
 
-  .slide img {
-    width: 20vw;
-    /* object-fit: cover; */
-    margin: 0 auto;
-  }
-  
-  .slide {
-    transform: scale(0.5);
-    transition: transform 300ms;
-    opacity: 0.5;
-  }
-  
-  
-  .activeSlide {
-    transform: scale(0.9);
-    opacity: 1;
-  }
-  
-  .activeSlide .animate {
-    animation: rotateY-anim 0.25s 5;
-    transform-origin: center;
-    transition: transform 300ms;
-    animation-timing-function: cubic-bezier(0,0,0.5,1);
-  }
-  
-  @keyframes rotateY-anim {
-    0% {
-      transform: rotateY(0deg);
-    }
-  
-    100% {
-      transform: rotateY(360deg);
-    }
-  }
-  
-  @-webkit-keyframes rotateY {
-    to { -webkit-transform: rotateY(0deg); }
-  }
-  @keyframes rotateY {
-    to { transform: rotateY(306deg); }
-  }
+.pillar {
+  width: 20%;
+  position: relative;
+  text-align: center;
+}
+
+.pillar .daos {
+  width: 130%;
+  margin-top: 70%;
+}
+
+.daosImg {
+  position: absolute;
+  width: 70%;
+  float: center;
+  margin-left: 50%;
+  top: 5px;
+}
+
+.daosImg:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+  width: 75%;
 }
 
 @font-face {
