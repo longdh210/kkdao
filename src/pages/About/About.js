@@ -7,12 +7,14 @@ import { motion } from "framer-motion";
 
 import "./About.css";
 
-const About = ({ goToFocus }) => {
+const About = ({ goToFocus, back }) => {
     return (
         <motion.div className='about-root-container'>
             <div id='backgroundContainer'>
                 <div id='rockHeaderContainer'>
-                    <SocialButtons leftIcon={<BackIcon />} />
+                    <SocialButtons
+                        leftIcon={<BackIcon back={() => back()} />}
+                    />
                     <img src={Rock02} alt='Rock02' id='about-rock2' />
                 </div>
 
@@ -90,7 +92,7 @@ const About = ({ goToFocus }) => {
     );
 };
 
-const BackIcon = () => {
+const BackIcon = ({ back }) => {
     return (
         <div>
             <img
@@ -98,6 +100,7 @@ const BackIcon = () => {
                 alt='BackIcon'
                 className='backIcon'
                 style={{ width: "90%" }}
+                onClick={() => back()}
             />
         </div>
     );

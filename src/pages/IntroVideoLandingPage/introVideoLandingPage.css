@@ -38,6 +38,14 @@
   overflow: hidden;
 }
 
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 #intro-video {
   position: absolute;
   width: 100%;
@@ -93,6 +101,9 @@
 }
 
 .content {
+  top: 0;
+  left: 0;
+  position: absolute;
   width: 100vw;
   height: 80vh;
   flex-direction: column;

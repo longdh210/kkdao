@@ -9,6 +9,7 @@ const VideoPreview = ({ videoSrc, onSetIsDone }) => {
             muted
             // preload='auto'
             onEnded={() => onSetIsDone()}
+            preload='auto'
             id='intro-video'
         />
     );
