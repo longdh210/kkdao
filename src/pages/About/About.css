@@ -1,176 +1,368 @@
-.about-root-container {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+@media screen and (min-width: 1000px) {
+  .about-root-container {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-  height: 100vh;
-  width: 100vw;
-  position: relative;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
 
-  background-image: url("../../assets/about-bg.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
+    background-image: url("../../assets/resources/pc/about-bg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
 
-  /* display: inline-block; */
-}
-
-#backgroundContainer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-#rockHeaderContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#introContainer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#title {
-  background: linear-gradient(
-    75.27deg,
-    #7c7d7f -24.99%,
-    #c3c4c6 14.72%,
-    #9ea0a3 57.04%,
-    #cbccce 100%
-  );
-  text-align: center;
-  font-size: 10vh;
-  max-lines: 1;
-  letter-spacing: 30px;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-family: SFUFuturaRegular;
-  font-weight: 400;
-  margin-top: 150px;
-  margin-bottom: 0;
-}
-
-#subtitleContainer {
-  width: 35%;
-  transform: translateX(50%);
-  white-space: normal;
-  margin-left: 15%;
-}
-
-#subtitle {
-  text-align: justify;
-  font-size: medium;
-  line-height: 100%;
-}
-
-#shareInnovationBtn {
-  float: left;
-  background: #ffd953;
-  padding: 16px;
-  border-width: 0;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  border-radius: 16px;
-  font-family: MontserratBold;
-}
-
-.btn:hover {
-  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
-    3px 3px 6px rgba(105, 129, 162, 0.2);
-}
-
-.footer {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-}
-
-#about-rock1 {
-  width: 20vw;
-  animation: about-rock1-animation 4s infinite linear alternate;
-}
-
-#about-rock2 {
-  width: 10%;
-  width: 8%;
-  animation: about-rock2-animation 4s infinite linear both;
-  margin-left: 10%;
-}
-
-#about-rock3 {
-  display: block;
-  transform: translate(5vw);
-  width: 10vw;
-  height: 10vw;
-  align-self: flex-end;
-  animation: about-rock3-animation 4s infinite linear alternate;
-}
-
-@keyframes about-rock1-animation {
-  from {
-    transform: translate(-10%, -15%);
+    /* display: inline-block; */
   }
-  to {
-    transform: translateX(10%, 15%);
+
+  #backgroundContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #rockHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #introContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #title {
+    background: linear-gradient(
+      75.27deg,
+      #7c7d7f -24.99%,
+      #c3c4c6 14.72%,
+      #9ea0a3 57.04%,
+      #cbccce 100%
+    );
+    text-align: center;
+    font-size: 10vh;
+    max-lines: 1;
+    letter-spacing: 30px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: SFUFuturaRegular;
+    font-weight: 400;
+    margin-top: 150px;
+    margin-bottom: 0;
+  }
+
+  #subtitleContainer {
+    width: 35%;
+    transform: translateX(50%);
+    white-space: normal;
+    margin-left: 15%;
+  }
+
+  #subtitle {
+    text-align: justify;
+    font-size: medium;
+    line-height: 100%;
+  }
+
+  #shareInnovationBtn {
+    float: left;
+    background: #ffd953;
+    padding: 16px;
+    border-width: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 16px;
+    font-family: MontserratBold;
+  }
+
+  .btn:hover {
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
+      3px 3px 6px rgba(105, 129, 162, 0.2);
+  }
+
+  .footer {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #about-rock1 {
+    width: 20vw;
+    animation: about-rock1-animation 4s infinite linear alternate;
+  }
+
+  #about-rock2 {
+    width: 10%;
+    width: 8%;
+    animation: about-rock2-animation 4s infinite linear both;
+    margin-left: 10%;
+  }
+
+  #about-rock3 {
+    display: block;
+    transform: translate(5vw);
+    width: 10vw;
+    height: 10vw;
+    align-self: flex-end;
+    animation: about-rock3-animation 4s infinite linear alternate;
+  }
+
+  @keyframes about-rock1-animation {
+    from {
+      transform: translate(-10%, -15%);
+    }
+    to {
+      transform: translateX(10%, 15%);
+    }
+  }
+
+  @keyframes about-rock2-animation {
+    from {
+      transform: rotate(0deg) translate(-10%, -20%) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translate(-10%, -20%) rotate(-360deg);
+    }
+  }
+
+  @keyframes about-rock3-animation {
+    from {
+      transform: rotate(360deg) translate(-0%, -10%) scale(0.9) rotate(-360deg);
+    }
+    to {
+      transform: rotate(0deg) translate(-0%, -10%) scale(1.1) rotate(0deg);
+    }
+  }
+
+  @font-face {
+    font-family: "SFUFuturaBold";
+    src: local("SFUFuturaBold"),
+      url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  }
+
+  @font-face {
+    font-family: "SFUFuturaRegular";
+    src: local("SFUFuturaRegular"),
+      url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+  }
+
+  @font-face {
+    font-family: "MontserratRegular";
+    src: local("MontserratRegular"),
+      url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+  }
+
+  @font-face {
+    font-family: "MontserratBold";
+    src: local("MontserratBold"),
+      url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
   }
 }
 
-@keyframes about-rock2-animation {
-  from {
-    transform: rotate(0deg) translate(-10%, -20%) rotate(0deg);
+@media screen and (max-width: 500px) {
+  .about-root-container {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    background-image: url("../../assets/resources/mobile/about-bg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    /* display: inline-block; */
   }
-  to {
-    transform: rotate(360deg) translate(-10%, -20%) rotate(-360deg);
+
+  #backgroundContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-}
 
-@keyframes about-rock3-animation {
-  from {
-    transform: rotate(360deg) translate(-0%, -10%) scale(0.9) rotate(-360deg);
+  #rockHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(0deg) translate(-0%, -10%) scale(1.1) rotate(0deg);
+
+  #introContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
   }
-}
 
-@font-face {
-  font-family: "SFUFuturaBold";
-  src: local("SFUFuturaBold"),
-    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
-}
+  #title {
+    word-wrap: break-word;
+    background: linear-gradient(
+      75.27deg,
+      #7c7d7f -24.99%,
+      #c3c4c6 14.72%,
+      #9ea0a3 57.04%,
+      #cbccce 100%
+    );
+    text-align: start;
+    font-size: 15vw;
+    max-lines: 1;
+    white-space: normal;
+    transform: translateY(-10vh);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: SFUFuturaRegular;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
 
-@font-face {
-  font-family: "SFUFuturaRegular";
-  src: local("SFUFuturaRegular"),
-    url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
-}
+  #subtitleContainer {
+    white-space: normal;
+  }
 
-@font-face {
-  font-family: "MontserratRegular";
-  src: local("MontserratRegular"),
-    url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
-}
+  #subtitle {
+    margin-top: 2vh;
+    text-align: justify;
+    font-size: medium;
+    line-height: 100%;
+    transform: translateY(-10vh);
+  }
 
-@font-face {
-  font-family: "MontserratBold";
-  src: local("MontserratBold"),
-    url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
+  #shareInnovationBtn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5vh;
+    left: 0;
+    right: 0;
+
+    background: #ffd953;
+    padding: 16px;
+    border-width: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 16px;
+    font-family: MontserratBold;
+  }
+
+  .btn:hover {
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
+      3px 3px 6px rgba(105, 129, 162, 0.2);
+  }
+
+  #about-footer {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #about-rock1 {
+    width: 20vw;
+    animation: about-rock1-animation 4s infinite linear alternate;
+  }
+
+  #about-rock2 {
+    width: 10%;
+    width: 8%;
+    animation: about-rock2-animation 4s infinite linear both;
+    margin-left: 10%;
+  }
+
+  #about-rock3 {
+    display: block;
+    transform: translate(5vw);
+    width: 10vw;
+    height: 10vw;
+    align-self: flex-end;
+    animation: about-rock3-animation 4s infinite linear alternate;
+  }
+
+  @keyframes about-rock1-animation {
+    from {
+      transform: translate(-10%, -15%);
+    }
+    to {
+      transform: translateX(10%, 15%);
+    }
+  }
+
+  @keyframes about-rock2-animation {
+    from {
+      transform: rotate(0deg) translate(-10%, -20%) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translate(-10%, -20%) rotate(-360deg);
+    }
+  }
+
+  @keyframes about-rock3-animation {
+    from {
+      transform: rotate(360deg) translate(-0%, -10%) scale(0.9) rotate(-360deg);
+    }
+    to {
+      transform: rotate(0deg) translate(-0%, -10%) scale(1.1) rotate(0deg);
+    }
+  }
+
+  @font-face {
+    font-family: "SFUFuturaBold";
+    src: local("SFUFuturaBold"),
+      url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  }
+
+  @font-face {
+    font-family: "SFUFuturaRegular";
+    src: local("SFUFuturaRegular"),
+      url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+  }
+
+  @font-face {
+    font-family: "MontserratRegular";
+    src: local("MontserratRegular"),
+      url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+  }
+
+  @font-face {
+    font-family: "MontserratBold";
+    src: local("MontserratBold"),
+      url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
+  }
 }
