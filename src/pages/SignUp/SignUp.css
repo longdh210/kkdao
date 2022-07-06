@@ -25,6 +25,8 @@
   }
 
   #signup-rock5 {
+    display: none;
+
     margin-left: 5vw;
     position: absolute;
     width: 10%;
@@ -254,12 +256,13 @@
   #sign-up-rocks-layer {
     width: 100vw;
     height: 100vh;
+    z-index: 0;
   }
 
   #signup-rock5 {
     margin-left: 5vw;
     position: absolute;
-    width: 10%;
+    width: 20%;
 
     animation: rock5Animation 4s infinite linear alternate;
   }
@@ -298,11 +301,11 @@
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 20vh;
+    top: 10vh;
     position: absolute;
-    width: 5%;
+    width: 20%;
 
-    animation: rock7Animation 3s infinite linear forwards;
+    animation: rock7Animation 3s infinite linear alternate;
   }
 
   @keyframes rock7Animation {
@@ -310,18 +313,18 @@
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+      transform: rotate(180deg);
     }
   }
 
   #signUpWrapper {
     position: absolute;
     bottom: 5vh;
-    z-index: 2;
     margin-left: 5vw;
   }
 
   #signup {
+    display: none;
     text-align: center;
     line-height: 100%;
     font-size: 40px;

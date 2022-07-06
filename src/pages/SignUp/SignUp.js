@@ -1,5 +1,5 @@
 import "./SignUp.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Rock5 from "../../assets/KKDAO_Rock/Rock05.png";
 import Rock6 from "../../assets/KKDAO_Rock/Rock06.png";
 import Rock7 from "../../assets/KKDAO_Rock/Rock07.png";
@@ -9,10 +9,14 @@ import { motion } from "framer-motion";
 const SignUp = () => {
   const [isShowingForm, setIsShowingForm] = useState(false);
 
+  useEffect(() => {
+    setIsShowingForm(true);
+  });
+
   return (
     <div id="sign-up-root-container">
       <div id="sign-up-rocks-layer">
-        {/* <img src={Rock5} alt='Rock5' id='signup-rock5' /> */}
+        <img src={Rock5} alt="Rock5" id="signup-rock5" />
         <img src={Rock6} alt="Rock6" id="signup-rock6" />
         <img src={Rock7} alt="Rock7" id="signup-rock7" />
       </div>
