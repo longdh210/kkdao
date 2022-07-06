@@ -190,7 +190,7 @@
 
     background-image: url("../../assets/resources/mobile/about-bg.svg");
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
 
     /* display: inline-block; */
   }

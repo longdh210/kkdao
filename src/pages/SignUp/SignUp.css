@@ -1,226 +1,473 @@
-#sign-up-root-container {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+@media screen and (min-width: 1000px) {
+  #sign-up-root-container {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-  height: 100vh;
-  width: 100vw;
-  position: relative;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
 
-  background-image: url("../../assets/signup-bg.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url("../../assets/signup-bg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#sign-up-rocks-layer {
-  width: 100vw;
-  height: 100vh;
-}
-
-#signup-rock5 {
-  margin-left: 5vw;
-  position: absolute;
-  width: 10%;
-
-  animation: rock5Animation 4s infinite linear alternate;
-}
-
-@keyframes rock5Animation {
-  from {
-    transform: translateY(-20%) rotate(0deg) translateX(10%) rotate(0deg)
-      scale(1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    transform: translateX(-50%) rotate(360deg) translateX(10%) rotate(-360deg)
-      scale(1.3);
+
+  #sign-up-rocks-layer {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #signup-rock5 {
+    display: none;
+
+    margin-left: 5vw;
+    position: absolute;
+    width: 10%;
+
+    animation: rock5Animation 4s infinite linear alternate;
+  }
+
+  @keyframes rock5Animation {
+    from {
+      transform: translateY(-20%) rotate(0deg) translateX(10%) rotate(0deg)
+        scale(1);
+    }
+    to {
+      transform: translateX(-50%) rotate(360deg) translateX(10%) rotate(-360deg)
+        scale(1.3);
+    }
+  }
+
+  #signup-rock6 {
+    bottom: 10vh;
+    left: 20vw;
+    position: absolute;
+    width: 5%;
+
+    animation: rock6Animation 2s infinite linear both;
+  }
+
+  @keyframes rock6Animation {
+    from {
+      transform: rotate(0deg) translateX(50%) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(50%) rotate(-360deg);
+    }
+  }
+
+  #signup-rock7 {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 20vh;
+    position: absolute;
+    width: 5%;
+
+    animation: rock7Animation 3s infinite linear forwards;
+  }
+
+  @keyframes rock7Animation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  #signUpWrapper {
+    position: absolute;
+    bottom: 5vh;
+    z-index: 2;
+    margin-left: 5vw;
+  }
+
+  #signup {
+    text-align: center;
+    line-height: 100%;
+    font-size: 80px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    /* font-family: SFUFuturaRegular; */
+    font-style: normal;
+  }
+
+  #formParentLayout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  #formContainer {
+    align-self: center;
+    position: absolute;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.49);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #close {
+    position: absolute;
+    width: 2%;
+    margin: 2%;
+    height: auto;
+    right: 0;
+    top: 0;
+  }
+
+  #formControl {
+    width: 100%;
+    justify-items: baseline;
+    display: flex;
+    margin-bottom: 2%;
+    flex-direction: column;
+  }
+
+  #formTitle {
+    text-align: center;
+    background: linear-gradient(
+      75.27deg,
+      #7c7d7f -24.99%,
+      #c3c4c6 14.72%,
+      #9ea0a3 57.04%,
+      #cbccce 100%
+    );
+    font-size: 60px;
+    margin: 0 auto;
+    letter-spacing: 10px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  #additionalInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 2%;
+  }
+
+  .formInput {
+    min-width: 0;
+    min-height: 0;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+    outline: rgba(0, 0, 0, 0.15);
+  }
+
+  #projectDescriptionInput {
+    resize: none;
+    margin: 0 2%;
+    font-family: inherit;
+    padding: 2% 2%;
+  }
+
+  .horizontalInput {
+    padding-left: 2%;
+    width: 30%;
+  }
+
+  #form-input-spacing {
+    display: none;
+  }
+
+  .verticalInput {
+    padding: 2% 2%;
+    margin: 0 2%;
+  }
+
+  #sendBtn {
+    background: #ffd953;
+    border-radius: 16px;
+    padding: 2%;
+    margin: 0 2%;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+  }
+
+  #sendBtn:hover {
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
+      3px 3px 6px rgba(105, 129, 162, 0.2);
+  }
+
+  @font-face {
+    font-family: "SFUFuturaBold";
+    src: local("SFUFuturaBold"),
+      url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  }
+
+  @font-face {
+    font-family: "SFUFuturaRegular";
+    src: local("SFUFuturaRegular"),
+      url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+  }
+
+  @font-face {
+    font-family: "MontserratRegular";
+    src: local("MontserratRegular"),
+      url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
   }
 }
 
-#signup-rock6 {
-  bottom: 10vh;
-  left: 20vw;
-  position: absolute;
-  width: 5%;
+@media screen and (max-width: 500px) {
+  #sign-up-root-container {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-  animation: rock6Animation 2s infinite linear both;
-}
+    height: 100vh;
+    width: 100vw;
+    position: relative;
 
-@keyframes rock6Animation {
-  from {
-    transform: rotate(0deg) translateX(50%) rotate(0deg);
+    background-image: url("../../assets/signup-bg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg) translateX(50%) rotate(-360deg);
+
+  #sign-up-rocks-layer {
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
   }
-}
 
-#signup-rock7 {
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  top: 20vh;
-  position: absolute;
-  width: 5%;
+  #signup-rock5 {
+    margin-left: 5vw;
+    position: absolute;
+    width: 20%;
 
-  animation: rock7Animation 3s infinite linear forwards;
-}
-
-@keyframes rock7Animation {
-  from {
-    transform: rotate(0deg);
+    animation: rock5Animation 4s infinite linear alternate;
   }
-  to {
-    transform: rotate(360deg);
+
+  @keyframes rock5Animation {
+    from {
+      transform: translateY(-20%) rotate(0deg) translateX(10%) rotate(0deg)
+        scale(1);
+    }
+    to {
+      transform: translateX(-50%) rotate(360deg) translateX(10%) rotate(-360deg)
+        scale(1.3);
+    }
   }
-}
 
-#signUpWrapper {
-  position: absolute;
-  bottom: 5vh;
-  z-index: 2;
-  margin-left: 5vw;
-}
+  #signup-rock6 {
+    bottom: 10vh;
+    left: 20vw;
+    position: absolute;
+    width: 5%;
 
-#signup {
-  text-align: center;
-  line-height: 100%;
-  font-size: 80px;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  text-decoration: underline;
-  /* font-family: SFUFuturaRegular; */
-  /* text-decoration-color: red; */
-  font-style: normal;
-}
+    animation: rock6Animation 2s infinite linear both;
+  }
 
-#formParentLayout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+  @keyframes rock6Animation {
+    from {
+      transform: rotate(0deg) translateX(50%) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(50%) rotate(-360deg);
+    }
+  }
 
-#formContainer {
-  align-self: center;
-  position: absolute;
-  width: 50%;
-  background: rgba(255, 255, 255, 0.49);
-  border-radius: 16px;
-  backdrop-filter: blur(6px);
-  z-index: 2;
+  #signup-rock7 {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 10vh;
+    position: absolute;
+    width: 20%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    animation: rock7Animation 3s infinite linear alternate;
+  }
 
-#close {
-  position: absolute;
-  width: 2%;
-  margin: 2%;
-  height: auto;
-  right: 0;
-  top: 0;
-}
+  @keyframes rock7Animation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
 
-#formControl {
-  width: 100%;
-  justify-items: baseline;
-  display: flex;
-  margin-bottom: 2%;
-  flex-direction: column;
-}
+  #signUpWrapper {
+    position: absolute;
+    bottom: 5vh;
+    margin-left: 5vw;
+  }
 
-#formTitle {
-  text-align: center;
-  background: linear-gradient(
-    75.27deg,
-    #7c7d7f -24.99%,
-    #c3c4c6 14.72%,
-    #9ea0a3 57.04%,
-    #cbccce 100%
-  );
-  font-size: 60px;
-  margin: 0 auto;
-  letter-spacing: 10px;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+  #signup {
+    display: none;
+    text-align: center;
+    line-height: 100%;
+    font-size: 40px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    /* font-family: SFUFuturaRegular; */
+    /* text-decoration-color: red; */
+    font-style: normal;
+  }
 
-#additionalInfoContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 2%;
-}
+  #formParentLayout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
 
-.formInput {
-  min-width: 0;
-  min-height: 0;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  #formContainer {
+    align-self: center;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.49);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    z-index: 2;
+    width: 100vw;
 
-  padding-top: 2%;
-  padding-bottom: 2%;
-  outline: rgba(0, 0, 0, 0.15);
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-#projectDescriptionInput {
-  resize: none;
-  margin: 0 2%;
-  font-family: inherit;
-  padding: 2% 2%;
-}
+  #close {
+    position: absolute;
+    width: 8%;
+    margin: 2%;
+    height: auto;
+    right: 0;
+    top: 0;
+  }
 
-.horizontalInput {
-  padding-left: 2%;
-  width: 30%;
-}
+  #formControl {
+    width: 96%;
+    justify-items: baseline;
+    display: flex;
 
-.verticalInput {
-  padding: 2% 2%;
-  margin: 0 2%;
-}
+    margin-bottom: 2%;
 
-#sendBtn {
-  background: #ffd953;
-  border-radius: 16px;
-  padding: 2%;
-  margin: 0 2%;
-  font-weight: bold;
-  letter-spacing: 2px;
-  border: none;
-}
+    flex-direction: column;
+  }
 
-#sendBtn:hover {
-  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
-    3px 3px 6px rgba(105, 129, 162, 0.2);
-}
+  #formTitle {
+    text-align: center;
+    background: linear-gradient(
+      75.27deg,
+      #7c7d7f -24.99%,
+      #c3c4c6 14.72%,
+      #9ea0a3 57.04%,
+      #cbccce 100%
+    );
+    font-size: 60px;
+    margin: 0 auto;
+    letter-spacing: 10px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-@font-face {
-  font-family: "SFUFuturaBold";
-  src: local("SFUFuturaBold"),
-    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
-}
+  #additionalInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-@font-face {
-  font-family: "SFUFuturaRegular";
-  src: local("SFUFuturaRegular"),
-    url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
-}
+  .formInput {
+    min-width: 0;
+    min-height: 0;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
 
-@font-face {
-  font-family: "MontserratRegular";
-  src: local("MontserratRegular"),
-    url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+    outline: rgba(0, 0, 0, 0.15);
+  }
+
+  .formInput::placeholder {
+    color: #555555;
+    font-weight: bold;
+  }
+
+  .formInput:-ms-input-placeholder {
+    color: #555555;
+    font-weight: bold;
+  }
+
+  .formInput:-moz-placeholder {
+    color: #555555;
+    font-weight: bold;
+  }
+
+  #projectDescriptionInput {
+    resize: none;
+    font-family: inherit;
+    padding: 4% 4%;
+  }
+
+  .horizontalInput {
+    padding: 4% 4%;
+  }
+
+  .verticalInput {
+    padding: 4% 4%;
+  }
+
+  #sendBtn {
+    background: #ffd953;
+    border-radius: 16px;
+    padding: 4% 4%;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+  }
+
+  #sendBtn:hover {
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
+      3px 3px 6px rgba(105, 129, 162, 0.2);
+  }
+
+  @font-face {
+    font-family: "SFUFuturaBold";
+    src: local("SFUFuturaBold"),
+      url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  }
+
+  @font-face {
+    font-family: "SFUFuturaRegular";
+    src: local("SFUFuturaRegular"),
+      url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+  }
+
+  @font-face {
+    font-family: "MontserratRegular";
+    src: local("MontserratRegular"),
+      url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+  }
 }
