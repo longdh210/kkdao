@@ -27,7 +27,7 @@
   left: 0;
   right: 0;
   margin: auto;
-
+  height: 70%;
   z-index: 1;
 }
 
@@ -112,11 +112,12 @@
 }
 
 .title {
+  /* position: absolute; */
+  /* left: 0;
+  right: 0; */
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
+  width: 100vw;
   margin-top: 25%;
   margin-bottom: 0;
   font-family: SFUFuturaBold;
@@ -132,6 +133,15 @@
   -text-fill-color: transparent;
   text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
     3px 3px 33px rgba(105, 129, 162, 0.2);
+  letter-spacing: 1.165em;
+  display: inline-block;
+  /* -webkit-text-stroke: 1px black 60%; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #444444;
+}
+
+.title::first-letter {
+  margin-left: 1.165em;
 }
 
 .mainContent {
@@ -172,8 +182,8 @@
   /* background-color: black; */
   float: right;
   margin-left: 58vw;
-  width: 22%;
-  height: 55%;
+  width: 25%;
+  height: 85%;
   top: 20%;
   right: 38%;
 }
