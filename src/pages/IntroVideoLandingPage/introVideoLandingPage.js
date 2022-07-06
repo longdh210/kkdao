@@ -1,12 +1,13 @@
 import KKLogo from "../../assets/kkLogo.png";
 import IntroVideo from "../../assets/video/1920x1080-Vien-da.mp4";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 // import { use } from "react-router-dom";
 import "./introVideoLandingPage.css";
 import SocialButtons from "../../components/SocialButtons";
 import ZoomVideo from "../../assets/video/1920x1080-Zoom.mp4";
 import BackgroundVideo from "../../assets/video/1920x1080-BACKGROUND.mp4";
 import { motion } from "framer-motion";
+import VideoPreview from "../../components/VideoPreview";
 
 function LandingPage({ onFinished }) {
     const [isDone, setIsDone] = useState(false);
@@ -24,6 +25,22 @@ function LandingPage({ onFinished }) {
         }
         setCoord({ x: e.screenX, y: e.screenY });
     };
+
+    const onSetIsDone = () => {
+        setIsDone(true);
+    };
+
+    // const VideoPage = useMemo(() => {
+    //     // <VideoPreview videoSrc={IntroVideo}></VideoPreview>;
+    //     <video
+    //         src={IntroVideo}
+    //         autoPlay
+    //         muted
+    //         // preload='auto'
+    //         onEnded={() => setIsDone(true)}
+    //         id='intro-video'
+    //     />;
+    // }, []);
 
     return (
         <motion.div
@@ -49,6 +66,7 @@ function LandingPage({ onFinished }) {
                         autoPlay
                         muted
                         loop
+                        // preload='auto'
                         // onEnded={() => onFinished()}
                     ></video>
                 </div>
@@ -56,23 +74,34 @@ function LandingPage({ onFinished }) {
 
             {zoom && isDone && (
                 <div className='zoomAboutPage'>
-                    <video
+                    {/* <video
                         id='intro-video'
                         src={ZoomVideo}
                         autoPlay
                         muted
+                        // preload='auto'
                         onEnded={() => onFinished()}
-                    />
+                    /> */}
+                    <VideoPreview
+                        videoSrc={ZoomVideo}
+                        onSetIsDone={() => onFinished()}
+                    ></VideoPreview>
                 </div>
             )}
             {!isDone && !zoom && (
-                <video
-                    src={IntroVideo}
-                    autoPlay
-                    muted
-                    onEnded={() => setIsDone(true)}
-                    id='intro-video'
-                />
+                // <video
+                //     src={IntroVideo}
+                //     autoPlay
+                //     muted
+                //     // preload='auto'
+                //     onEnded={() => setIsDone(true)}
+                //     id='intro-video'
+                // />
+
+                <VideoPreview
+                    videoSrc={IntroVideo}
+                    onSetIsDone={onSetIsDone}
+                ></VideoPreview>
             )}
             {isDone && zoom === false && (
                 <motion.div
