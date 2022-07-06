@@ -11,12 +11,14 @@ const SocialButtons = ({ leftIcon }) => {
           flexDirection: "row",
           width: "100vw",
           zIndex: "20",
+          marginRight: "20px",
+          marginLeft: "20px",
           justifyContent: "space-between",
           alignItems: "center",
         }}
       >
         {leftIcon}
-        <div className="emailTwitter" style={{ marginRight: "20px" }}>
+        <div className="emailTwitter">
           <img
             src={EmailLogo}
             alt="EmailLogo"
