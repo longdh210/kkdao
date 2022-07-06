@@ -25,8 +25,22 @@ import SocialButtons from "../../components/SocialButtons";
 import BackButton from "../../assets/back-button.svg";
 import useWindowSize from "../../hooks/useWindowSide";
 import { useEffect, useState } from "react";
+import Slider from "react-slick";
+import { motion } from "framer-motion";
+
+const logosFocus = [
+    DaosImg,
+    DefiImg,
+    CefiImg,
+    Web3Img,
+    InfraImg,
+    WalletImg,
+    GamingImg,
+    NFTImg,
+];
 
 function FocusPage({ goToInvestor }) {
+    const [logoIndex, setLogoIndex] = useState(0);
     const size = useWindowSize();
 
     console.log(size.width);
@@ -38,6 +52,18 @@ function FocusPage({ goToInvestor }) {
             setPlatform("tablet");
         }
     }, [size]);
+
+    const settings = {
+        infinite: true,
+        lazyLoad: true,
+        speed: 300,
+        slidesToShow: 3,
+        centerMode: true,
+        centerPadding: 0,
+        // nextArrow: <NextArrow />,
+        // prevArrow: <PrevArrow />,
+        beforeChange: (current, next) => setLogoIndex(next),
+    };
 
     return (
         <>
@@ -92,7 +118,51 @@ function FocusPage({ goToInvestor }) {
                     </div>
                 </div>
             ) : (
-                <div></div>
+                <div className='focusPage'>
+                    <div className='titleFocus'>
+                        <p>FOCUS PROJECT</p>
+                    </div>
+                    {/* <div className='pillar'>
+                        <img className='daosImg' src={InfraImg}></img>
+                        <img className='daos' src={Infratructure}></img>
+                    </div> */}
+                    <motion.div
+                        className='pillar'
+                        initial={{
+                            opacity: 0,
+                            x: -50,
+                            transitionDuration: "1s",
+                        }}
+                        animate={{
+                            opacity: 1,
+                            x: 0,
+                        }}
+                    >
+                        <Slider {...settings}>
+                            {logosFocus.map((logo, index) => (
+                                <div
+                                    key={index}
+                                    className={
+                                        index === logoIndex
+                                            ? "slide activeSlide"
+                                            : "slide"
+                                    }
+                                >
+                                    <img
+                                        // ref={
+                                        //     logoIndex === 0 ? firstLogoRef : ""
+                                        // }
+                                        // className={
+                                        //     firstLoad === true ? "animate" : ""
+                                        // }
+                                        src={logo}
+                                        alt={logo}
+                                    ></img>
+                                </div>
+                            ))}
+                        </Slider>
+                    </motion.div>
+                </div>
             )}
         </>
     );
