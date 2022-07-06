@@ -25,72 +25,69 @@ import SocialButtons from "../../components/SocialButtons";
 import BackButton from "../../assets/back-button.svg";
 
 function FocusPage({ goToInvestor }) {
-    return (
-        <div className='focusPage'>
-            <div className='socialButtonFocus'>
-                <SocialButtons leftIcon={<BackIcon />}></SocialButtons>
-            </div>
-            <div className='titleFocus'>
-                <div className='child' onClick={() => goToInvestor()}>
-                    F O C U S &nbsp;P R O J E C T
-                </div>
-                <div className='child2'>
-                    <img className='rock1' src={Rock1}></img>
-                </div>
-            </div>
-            <div className='row1'>
-                <div className='pillar'>
-                    <img className='daosImg' src={DaosImg}></img>
-                    <img className='daos' src={Daos}></img>
-                </div>
-                <div className='pillar'>
-                    <img className='daosImg' src={DefiImg}></img>
-                    <img className='daos' src={Defi}></img>
-                </div>
-                <div className='pillar'>
-                    <img className='daosImg' src={CefiImg}></img>
-                    <img className='daos' src={Cefi}></img>
-                </div>
-                <div className='pillar'>
-                    <img className='daosImg' src={Web3Img}></img>
-                    <img className='daos' src={Web3App}></img>
-                </div>
-            </div>
-            <div className='row2'>
-                <div className='pillar'>
-                    <img className='daosImg' src={InfraImg}></img>
-                    <img className='daos' src={Infratructure}></img>
-                </div>
-                <div className='pillar'>
-                    <img className='daosImg' src={WalletImg}></img>
-                    <img className='daos' src={Wallet}></img>
-                </div>
-                <div className='pillar'>
-                    <img className='daosImg' src={GamingImg}></img>
-                    <img className='daos' src={Gaming}></img>
-                </div>
-                <div className='pillar'>
-                    <img className='daosImg' src={NFTImg}></img>
-                    <img className='daos' src={NFT}></img>
-                </div>
-            </div>
+  return (
+    <div className="focusPage">
+      <div className="titleFocus">
+        <div className="child" onClick={() => goToInvestor()}>
+          F O C U S &nbsp;P R O J E C T
         </div>
-    );
+        {/* <div className="child2">
+          <img className="rock1" src={Rock1}></img>
+        </div> */}
+      </div>
+      <div className="row1">
+        <div className="pillar">
+          <img className="daosImg" src={DaosImg}></img>
+          <img className="daos" src={Daos}></img>
+        </div>
+        <div className="pillar">
+          <img className="daosImg" src={DefiImg}></img>
+          <img className="daos" src={Defi}></img>
+        </div>
+        <div className="pillar">
+          <img className="daosImg" src={CefiImg}></img>
+          <img className="daos" src={Cefi}></img>
+        </div>
+        <div className="pillar">
+          <img className="daosImg" src={Web3Img}></img>
+          <img className="daos" src={Web3App}></img>
+        </div>
+      </div>
+      <div className="row2">
+        <div className="pillar">
+          <img className="daosImg" src={InfraImg}></img>
+          <img className="daos" src={Infratructure}></img>
+        </div>
+        <div className="pillar">
+          <img className="daosImg" src={WalletImg}></img>
+          <img className="daos" src={Wallet}></img>
+        </div>
+        <div className="pillar">
+          <img className="daosImg" src={GamingImg}></img>
+          <img className="daos" src={Gaming}></img>
+        </div>
+        <div className="pillar">
+          <img className="daosImg" src={NFTImg}></img>
+          <img className="daos" src={NFT}></img>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 const BackIcon = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <div>
-            <img
-                src={BackButton}
-                alt='BackIcon'
-                className='backIcon'
-                onClick={() => navigate(-1)}
-            />
-        </div>
-    );
+  return (
+    <div>
+      <img
+        src={BackButton}
+        alt="BackIcon"
+        className="backIcon"
+        onClick={() => navigate(-1)}
+      />
+    </div>
+  );
 };
 
 export default FocusPage;

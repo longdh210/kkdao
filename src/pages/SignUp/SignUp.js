@@ -9,9 +9,9 @@ import { motion } from "framer-motion";
 const SignUp = () => {
   const [isShowingForm, setIsShowingForm] = useState(false);
 
-  useEffect(() => {
-    setIsShowingForm(true);
-  });
+  // useEffect(() => {
+  //   setIsShowingForm(true);
+  // });
 
   return (
     <div id="sign-up-root-container">

@@ -4,16 +4,26 @@ import FocusPage from "../Focus/focus";
 import Investor from "../Investor/Investor";
 import SignUp from "../SignUp/SignUp";
 import Loading from "../Loading/loading";
+import SocialButtons from "../../components/SocialButtons";
+import BackButton from "../../assets/back-button.svg";
 
 import "./PageWrapper.css";
 import LandingPage from "../IntroVideoLandingPage/introVideoLandingPage";
 
 import { useRef } from "react";
 import { useHorizontalScroll } from "./../../components/useHorizontal";
+import TrackVisibility from "react-on-screen";
+
+const InvestorPage = ({ isVisible }) => {
+  console.log(isVisible);
+
+  return <Investor />;
+};
 
 const PageWrapper = () => {
   // const scrollRef = useHorizontalScroll();
   // Refs
+
   const focusRef = useRef(null);
   const investorRef = useRef(null);
   const signUpRef = useRef(null);
@@ -58,15 +68,22 @@ const PageWrapper = () => {
     return (
       <div>
         <div id="page-wrapper-root">
+          <div id="social-button">
+            <SocialButtons
+              leftIcon={<BackIcon back={() => setCurrentPage(1)} />}
+            />
+          </div>
           <div className="page-container">
             <About goToFocus={() => pageRefs[2].callback()} />
           </div>
           <div className="page-container" ref={pageRefs[0].ref}>
             <FocusPage goToInvestor={() => pageRefs[1].callback()} />
           </div>
-          <div className="page-container" ref={pageRefs[1].ref}>
-            <Investor goToSignUp={() => pageRefs[2].callback()} />
-          </div>
+
+          <TrackVisibility className="page-container" ref={pageRefs[1].ref}>
+            <InvestorPage />
+          </TrackVisibility>
+
           <div className="page-container" ref={pageRefs[2].ref}>
             <SignUp />
           </div>
@@ -74,6 +91,20 @@ const PageWrapper = () => {
       </div>
     );
   }
+};
+
+const BackIcon = ({ back }) => {
+  return (
+    <div>
+      <img
+        src={BackButton}
+        alt="BackIcon"
+        className="backIcon"
+        style={{ width: "80%" }}
+        onClick={() => back()}
+      />
+    </div>
+  );
 };
 
 export default PageWrapper;

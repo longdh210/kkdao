@@ -11,25 +11,35 @@ const SocialButtons = ({ leftIcon }) => {
           flexDirection: "row",
           width: "100vw",
           zIndex: "20",
-          marginRight: "20px",
-          marginLeft: "20px",
           justifyContent: "space-between",
           alignItems: "center",
         }}
       >
         {leftIcon}
-        <div className="emailTwitter">
+        <div
+          className="emailTwitter"
+          style={{
+            marginBottom: "15px",
+          }}
+        >
           <img
             src={EmailLogo}
             alt="EmailLogo"
             className="emailLogo"
-            style={{ width: "45%", marginBottom: "5%" }}
+            onClick={() => {
+              window.open("mailto:info@kkfund.co?subject=Register");
+            }}
+            style={{
+              width: "35%",
+            }}
           />
           <img
             src={TwitterLogo}
             alt="TwitterLogo"
             className="twitterLogo"
-            style={{ width: "55%" }}
+            style={{
+              width: "45%",
+            }}
           />
         </div>
       </div>

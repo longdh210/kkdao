@@ -1,5 +1,4 @@
 import SocialButtons from "../../components/SocialButtons";
-import BackButton from "../../assets/back-button.svg";
 import Rock01 from "../../assets/KKDAO_Rock/Rock01.png";
 import Rock02 from "../../assets/KKDAO_Rock/Rock02.png";
 import Rock03 from "../../assets/KKDAO_Rock/Rock03.png";
@@ -7,12 +6,11 @@ import { motion } from "framer-motion";
 
 import "./About.css";
 
-const About = ({ goToFocus, back }) => {
+const About = ({ goToFocus }) => {
   return (
     <div className="about-root-container">
       <div id="backgroundContainer">
         <div id="rockHeaderContainer">
-          <SocialButtons leftIcon={<BackIcon back={() => back()} />} />
           <img src={Rock02} alt="Rock02" id="about-rock2" />
         </div>
 
@@ -84,20 +82,6 @@ const About = ({ goToFocus, back }) => {
           </motion.button>
         </motion.div>
       </div>
-    </div>
-  );
-};
-
-const BackIcon = ({ back }) => {
-  return (
-    <div>
-      <img
-        src={BackButton}
-        alt="BackIcon"
-        className="backIcon"
-        style={{ width: "90%", marginTop: "20px" }}
-        onClick={() => back()}
-      />
     </div>
   );
 };
