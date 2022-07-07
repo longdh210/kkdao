@@ -8,6 +8,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
+    background-color: #ededed;
   }
   #social-button {
     z-index: 1000;
