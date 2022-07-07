@@ -130,11 +130,11 @@
   margin-bottom: 0;
   font-family: SFUFuturaBold;
   font-size: 15vh;
-  background: linear-gradient(
+  /* background: linear-gradient(
     0deg,
     #ffffff 47.23%,
     rgba(255, 255, 255, 0.5) 94.32%
-  );
+  ); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -143,8 +143,17 @@
     3px 3px 33px rgba(105, 129, 162, 0.2);
   letter-spacing: 1.165em;
   display: inline-block;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #444444;
+  /* -webkit-text-stroke-width: 1px; */
+  /* -webkit-text-stroke-color: #444444; */
+  background: linear-gradient(
+    90deg,
+    #ffffff 47.23%,
+    rgba(255, 255, 255, 0.5) 94.32%
+  );
+  color: white;
+  -webkit-text-stroke: 1px transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .title::first-letter {
