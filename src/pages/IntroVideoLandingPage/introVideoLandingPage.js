@@ -10,89 +10,75 @@ import { motion } from "framer-motion";
 import VideoPreview from "../../components/VideoPreview";
 
 function LandingPage({ onFinished }) {
-    const [isDone, setIsDone] = useState(false);
-    const [zoom, setZoom] = useState(false);
-
+    const [renderText, setRenderText] = useState(false);
     const [coord, setCoord] = useState({ x: 0, y: 0 });
     const [currentImage, setCurrentImage] = useState(50);
     const handleMouseMove = (e) => {
-        const pivot = 5;
-
-        if (e.screenX - coord.x >= pivot) {
+        if (coord.x < e.screenX) {
             if (currentImage === 100) return;
             setCurrentImage(currentImage + 1);
-        } else if (coord.x - e.screenX >= pivot) {
+        } else if (coord.x > e.screenX) {
             if (currentImage === 0) return;
             setCurrentImage(currentImage - 1);
         }
         setCoord({ x: e.screenX, y: e.screenY });
     };
 
-    const onSetIsDone = () => {
-        setIsDone(true);
-    };
-
-    const [onIntro, setOnIntro] = useState(true);
-    const [onBackground, setOnBackground] = useState(false);
-    const backgroundRef = useRef();
-    const zoomRef = useRef();
-
-    useEffect(() => {
-        let media = new Audio(IntroVideo);
-        if (backgroundRef.current) {
-            media.onloadedmetadata = function () {
-                setTimeout(() => {
-                    setOnBackground(true);
-                    backgroundRef.current.play();
-                }, media.duration * 1000);
-            };
-        }
-    }, [backgroundRef.current]);
-
-    useEffect(() => {
-        if (zoom && zoomRef.current) {
-            console.log("1");
-            zoomRef.current.play();
-            setOnBackground(false);
-        }
-        console.log("playZoom", zoom);
-    }, [zoom, zoomRef.current]);
+    // 0 : stage intro
+    // 1 : show static background
+    // 2 : show video background + content
+    // 3 : start zoom
+    const [stage, setStage] = useState(0);
 
     return (
         <motion.div
             onMouseMove={handleMouseMove}
             className='intro'
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
+            // initial={{ opacity: 0, x: 100 }}
+            // animate={{ opacity: 1, x: 0 }}
+            // exit={{ opacity: 0, x: -100 }}
             // drag="x"
         >
             {
                 <div>
-                    {onIntro && (
+                    {(stage == 0 || stage == 1) && (
                         <video
                             src={IntroVideo}
                             autoPlay
                             muted
                             onEnded={() => {
+                                // setOnIntro(false);
+                                setStage(1);
                                 setTimeout(() => {
-                                    setOnIntro(false);
-                                }, 10000);
+                                    // setDelayAfterIntro(true);
+                                    setStage(2);
+                                    setRenderText(true);
+                                }, 100);
                             }}
                             id='intro-video'
                         ></video>
                     )}
                     <video
-                        ref={zoomRef}
+                        // ref={zoomRef}
                         src={ZoomVideo}
                         muted
-                        className={`${zoom ? "visible" : "invisible"}`}
-                        id='intro-video'
+                        className={`${stage == 3 ? "visible" : "invisible"}`}
+                        id='intro-video-zoom'
                         onEnded={() => onFinished()}
-                    ></video>
+                    >
+                        {stage == 3
+                            ? setTimeout(() => {
+                                  var myVideo =
+                                      document.getElementById(
+                                          "intro-video-zoom"
+                                      );
+                                  myVideo.play();
+                              }, 100)
+                            : console.log("not run", stage)}
+                    </video>
                     <div
                         id='intro-center-rock-background'
-                        className={`${onBackground ? "visible" : "invisible"}`}
+                        className={`${stage == 2 ? "visible" : "invisible"}`}
                     >
                         <img
                             src={require(`../../assets/intro-rock-500x700/500x700\ Da\ tach\ nen_00` +
@@ -102,75 +88,82 @@ function LandingPage({ onFinished }) {
                             id='intro-center-rock'
                         />
                         <video
-                            ref={backgroundRef}
                             src={BackgroundVideo}
+                            loop
+                            autoPlay
                             muted
                             id='intro-video'
                         ></video>
-                        <motion.div
-                            className='content'
-                            initial={{
-                                opacity: 0,
-                                transition: { duation: 1 },
-                                y: 100,
-                            }}
-                            animate={{ opacity: 1, y: 0 }}
-                        >
-                            <SocialButtons leftIcon={<Logo />} />
-                            <motion.h1
-                                className='title'
-                                initial={{
-                                    opacity: 0,
-                                    transition: { duation: 1 },
-                                    y: 100,
-                                }}
-                                animate={{ opacity: 1, y: 0 }}
-                            >
-                                KKDAO
-                            </motion.h1>
-                            <div
-                                className='rockLandingPage'
-                                onClick={() => setZoom(true)}
-                            ></div>
-                            <motion.div
-                                className='mainContent'
-                                initial={{
-                                    opacity: 0,
-                                    // transition: {{ } },
-                                    y: 100,
-                                }}
-                                transition={{ ease: "easeOut", duration: 2 }}
-                                animate={{ opacity: 1, y: 0 }}
-                            >
-                                <p>
-                                    <b style={{ fontFamily: "SFUFutura" }}>
-                                        FIRST DAO
-                                    </b>{" "}
-                                    RUN BY A VC FIRM<br></br>IN{" "}
-                                    <b style={{ fontFamily: "SFUFutura" }}>
-                                        SOUTHEAST ASIA
-                                    </b>{" "}
-                                </p>
-                            </motion.div>
-                            <motion.div
-                                className='wrapButton'
-                                initial={{
-                                    opacity: 0,
-                                    transition: { duation: 2 },
-                                    y: 100,
-                                }}
-                                animate={{ opacity: 1, y: 0 }}
-                            >
-                                <button
-                                    id='button'
-                                    onClick={() => {
-                                        setZoom(true);
+                        {renderText && (
+                            <motion.div className='content'>
+                                <SocialButtons leftIcon={<Logo />} />
+                                <motion.h1
+                                    className='title'
+                                    initial={{
+                                        opacity: 0,
+                                        y: 100,
+                                        transitionDuration: "0s",
+                                        transitionDelay: "0s",
                                     }}
+                                    animate={{
+                                        opacity: 1,
+                                        y: -50,
+                                    }}
+                                    exit={{ opacity: 0 }}
                                 >
-                                    STEP IN
-                                </button>
+                                    KKDAO
+                                </motion.h1>
+                                <div
+                                    className='rockLandingPage'
+                                    onClick={() => setStage(3)}
+                                ></div>
+
+                                <motion.div
+                                    className='mainContent'
+                                    initial={{
+                                        opacity: 0,
+                                        y: 100,
+                                        transitionDuration: "0s",
+                                        transitionDelay: "0s",
+                                    }}
+                                    animate={{
+                                        opacity: 1,
+                                        y: 0,
+                                    }}
+                                    exit={{ opacity: 0 }}
+                                >
+                                    <p>
+                                        <b style={{ fontFamily: "SFUFutura" }}>
+                                            FIRST DAO
+                                        </b>{" "}
+                                        RUN BY A VC FIRM<br></br>IN{" "}
+                                        <b style={{ fontFamily: "SFUFutura" }}>
+                                            SOUTHEAST ASIA
+                                        </b>{" "}
+                                    </p>
+                                    <motion.div
+                                        className='wrapButton'
+                                        // initial={{
+                                        //     opacity: 0,
+                                        //     transitionDelay: "2s",
+                                        //     transitionDuration: "1s",
+                                        //     y: 100,
+                                        // }}
+                                        // animate={{ opacity: 1, y: 0 }}
+                                    >
+                                        <button
+                                            id='button'
+                                            onClick={() => {
+                                                setStage(3);
+                                                console.log("run");
+                                            }}
+                                        >
+                                            STEP IN
+                                        </button>
+                                    </motion.div>
+                                </motion.div>
                             </motion.div>
-                        </motion.div>
+                        )}
                     </div>
                 </div>
             }
@@ -183,11 +176,7 @@ const Logo = () => (
         className='kklogo'
         onClick={() => (window.location.href = "https://www.kkfund.co/")}
     >
-        <img
-            src={KKLogo}
-            alt='KKLogo'
-            style={{ width: "75%", marginBottom: "35%" }}
-        />
+        <img src={KKLogo} alt='KKLogo' style={{ width: "75%" }} />
     </div>
 );
 

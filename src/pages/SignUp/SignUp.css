@@ -95,9 +95,30 @@
     font-size: 80px;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-    text-decoration: underline;
-    /* font-family: SFUFuturaRegular; */
+    /* text-decoration: underline; */
+    font-family: SFUFuturaRegular;
     font-style: normal;
+    text-decoration-skip-ink: none;
+    text-decoration-color: #000000 100%;
+    margin-bottom: 0;
+  }
+
+  #sign-up-bottom-line{
+    border-top: 0px;
+    height: 10px;
+    /* display: none; */
+  }
+
+  #signup::before {
+    margin-top: 2%;
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    height: 5px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000000 47.92%, rgba(0, 0, 0, 0) 100%);
   }
 
   #formParentLayout {
@@ -148,12 +169,17 @@
       #9ea0a3 57.04%,
       #cbccce 100%
     );
-    font-size: 60px;
+    font-size: 13vh;
     margin: 0 auto;
     letter-spacing: 10px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-family: SFUFuturaRegular;
+    letter-spacing: 0.2em;
+    line-height: 100%;
+    font-weight: 400;
+    width: 100%;
   }
 
   #additionalInfoContainer {
