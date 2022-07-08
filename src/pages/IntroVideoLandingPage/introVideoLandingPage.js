@@ -38,7 +38,7 @@ function LandingPage({ onFinished }) {
 
     return (
         <motion.div
-            // onMouseMove={handleMouseMove}
+            onMouseMove={handleMouseMove}
             className='intro'
             // initial={{ opacity: 0, x: 100 }}
             // animate={{ opacity: 1, x: 0 }}
@@ -96,13 +96,13 @@ function LandingPage({ onFinished }) {
                         id='intro-center-rock-background'
                         className={`${stage == 2 ? "visible" : "invisible"}`}
                     >
-                        {/* <img
+                        <img
                             src={require(`../../assets/intro-rock-500x700/500x700\ Da\ tach\ nen_00` +
                                 currentImage.toString().padStart(3, "0") +
                                 ".png")}
                             alt='background'
                             id='intro-center-rock'
-                        /> */}
+                        />
                         {renderText && (
                             <motion.div className='content'>
                                 <SocialButtons leftIcon={<Logo />} />
