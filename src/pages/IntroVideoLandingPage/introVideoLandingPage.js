@@ -1,18 +1,15 @@
 import KKLogo from "../../assets/kkLogo.png";
-import IntroVideo from "../../assets/video/1920x1080-Vien-da.mp4";
+import IntroVideoMOV from "../../assets/video/1920x1080-Vien-da.mp4";
 import { useState, useMemo, useEffect, useRef } from "react";
-// import { use } from "react-router-dom";
 import "./introVideoLandingPage.css";
 import SocialButtons from "../../components/SocialButtons";
 import ZoomVideo from "../../assets/video/1920x1080-Zoom.mp4";
-import BackgroundVideo from "../../assets/video/1920x1080-BACKGROUND.mp4";
 import { motion } from "framer-motion";
-import VideoPreview from "../../components/VideoPreview";
-
 function LandingPage({ onFinished }) {
     const [renderText, setRenderText] = useState(false);
     const [coord, setCoord] = useState({ x: 0, y: 0 });
     const [currentImage, setCurrentImage] = useState(50);
+    // const [hideContent, setHideContent] = useState(true);
     const handleMouseMove = (e) => {
         if (coord.x < e.screenX) {
             if (currentImage === 100) return;
@@ -28,11 +25,20 @@ function LandingPage({ onFinished }) {
     // 1 : show static background
     // 2 : show video background + content
     // 3 : start zoom
-    const [stage, setStage] = useState(0);
+    const [stage, setStage] = useState(null);
+
+    useEffect(() => {
+        if (stage == null) setStage(0);
+
+        if (stage === 3) {
+            document.getElementById("intro-video-zoom").play();
+            // setTimeout(() => hideContent(true), 100);
+        }
+    }, [stage]);
 
     return (
         <motion.div
-            onMouseMove={handleMouseMove}
+            // onMouseMove={handleMouseMove}
             className='intro'
             // initial={{ opacity: 0, x: 100 }}
             // animate={{ opacity: 1, x: 0 }}
@@ -41,59 +47,62 @@ function LandingPage({ onFinished }) {
         >
             {
                 <div>
-                    {(stage == 0 || stage == 1) && (
-                        <video
-                            src={IntroVideo}
-                            autoPlay
-                            muted
-                            onEnded={() => {
-                                // setOnIntro(false);
-                                setStage(1);
-                                setTimeout(() => {
-                                    // setDelayAfterIntro(true);
-                                    setStage(2);
-                                    setRenderText(true);
-                                }, 100);
-                            }}
-                            id='intro-video'
-                        ></video>
-                    )}
-                    <video
-                        // ref={zoomRef}
-                        src={ZoomVideo}
+                    {/* <video
+                        id='intro-video-background'
+                        src={BackgroundVideo}
+                        autoPlay
                         muted
-                        className={`${stage == 3 ? "visible" : "invisible"}`}
-                        id='intro-video-zoom'
-                        onEnded={() => onFinished()}
+                        loop
+                    /> */}
+
+                    {/* <video src={IntroVideoMOV} type='video/quicktime'></video> */}
+
+                    <video
+                        id='intro-video-start'
+                        src={IntroVideoMOV}
+                        autoPlay
+                        muted
+                        preload='auto'
+                        // className={`${stage === 0 ? "visible" : "invisible"}`}
+                        onEnded={() => {
+                            setStage(1);
+                            setTimeout(() => {
+                                setStage(2);
+                                // setHideContent(false);
+                                setRenderText(true);
+                            }, 100);
+                        }}
                     >
-                        {stage == 3
+                        {stage === 0
                             ? setTimeout(() => {
                                   var myVideo =
                                       document.getElementById(
-                                          "intro-video-zoom"
+                                          "intro-video-start"
                                       );
                                   myVideo.play();
                               }, 100)
-                            : console.log("not run", stage)}
+                            : null}
                     </video>
+
+                    <video
+                        // ref={zoomRef}
+                        id='intro-video-zoom'
+                        src={ZoomVideo}
+                        muted
+                        className={`${stage === 3 ? "visible" : "invisible"}`}
+                        onEnded={() => onFinished()}
+                    ></video>
                     <div
                         id='intro-center-rock-background'
                         className={`${stage == 2 ? "visible" : "invisible"}`}
                     >
-                        <img
+                        {/* <img
                             src={require(`../../assets/intro-rock-500x700/500x700\ Da\ tach\ nen_00` +
                                 currentImage.toString().padStart(3, "0") +
                                 ".png")}
                             alt='background'
                             id='intro-center-rock'
-                        />
-                        <video
-                            src={BackgroundVideo}
-                            loop
-                            autoPlay
-                            muted
-                            id='intro-video'
-                        ></video>
+                        /> */}
                         {renderText && (
                             <motion.div className='content'>
                                 <SocialButtons leftIcon={<Logo />} />
@@ -155,7 +164,7 @@ function LandingPage({ onFinished }) {
                                             id='button'
                                             onClick={() => {
                                                 setStage(3);
-                                                console.log("run");
+                                                setRenderText(false);
                                             }}
                                         >
                                             STEP IN

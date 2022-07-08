@@ -13,6 +13,7 @@ import LandingPage from "../IntroVideoLandingPage/introVideoLandingPage";
 import { useRef } from "react";
 import { useHorizontalScroll } from "./../../components/useHorizontal";
 import TrackVisibility from "react-on-screen";
+import { useScrollHorizontal } from "../../components/ScrollPage";
 
 const InvestorPage = ({ isVisible }) => {
     console.log(isVisible);
@@ -24,6 +25,7 @@ const PageWrapper = () => {
     // const scrollRef = useHorizontalScroll();
     // Refs
 
+    const scrollRef = useHorizontalScroll();
     const focusRef = useRef(null);
     const investorRef = useRef(null);
     const signUpRef = useRef(null);
@@ -58,7 +60,7 @@ const PageWrapper = () => {
     // 0: Loading
     // 1: Video
     // 2: Landing Page
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
 
     if (currentPage === 0) {
         return <Loading onFinished={() => setCurrentPage(1)} />;
@@ -67,32 +69,38 @@ const PageWrapper = () => {
     } else {
         return (
             <div>
-                <div id='page-wrapper-root'>
-                    <div id='social-button'>
-                        <SocialButtons
-                            leftIcon={
-                                <BackIcon back={() => setCurrentPage(1)} />
-                            }
-                        />
-                    </div>
-                    <div className='page-container'>
-                        <About goToFocus={() => pageRefs[2].callback()} />
-                    </div>
-                    <div className='page-container' ref={pageRefs[0].ref}>
-                        <FocusPage
-                            goToInvestor={() => pageRefs[1].callback()}
-                        />
-                    </div>
+                <div
+                    id='page-wrapper-root'
+                    ref={scrollRef}
+                    style={{ overflow: "auto" }}
+                >
+                    <div style={{ whiteSpace: "nowrap" }}>
+                        <div id='social-button'>
+                            <SocialButtons
+                                leftIcon={
+                                    <BackIcon back={() => setCurrentPage(1)} />
+                                }
+                            />
+                        </div>
+                        <div className='page-container'>
+                            <About goToFocus={() => pageRefs[2].callback()} />
+                        </div>
+                        <div className='page-container' ref={pageRefs[0].ref}>
+                            <FocusPage
+                                goToInvestor={() => pageRefs[1].callback()}
+                            />
+                        </div>
 
-                    <TrackVisibility
-                        className='page-container'
-                        ref={pageRefs[1].ref}
-                    >
-                        <InvestorPage />
-                    </TrackVisibility>
+                        <TrackVisibility
+                            className='page-container'
+                            ref={pageRefs[1].ref}
+                        >
+                            <InvestorPage />
+                        </TrackVisibility>
 
-                    <div className='page-container' ref={pageRefs[2].ref}>
-                        <SignUp />
+                        <div className='page-container' ref={pageRefs[2].ref}>
+                            <SignUp />
+                        </div>
                     </div>
                 </div>
             </div>
