@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import About from "../About/About";
 import FocusPage from "../Focus/focus";
 import Investor from "../Investor/Investor";
@@ -30,6 +30,17 @@ const PageWrapper = () => {
     const investorRef = useRef(null);
     const signUpRef = useRef(null);
 
+    const wrapRef = useRef(null);
+
+    useEffect(() => {
+        if (wrapRef.current) {
+            wrapRef.current.addEventListener("wheel", (evt) => {
+                evt.preventDefault();
+                wrapRef.current.scrollLeft += evt.deltaY;
+            });
+        }
+    });
+    //
     const pageRefs = [
         {
             ref: focusRef,
@@ -69,38 +80,32 @@ const PageWrapper = () => {
     } else {
         return (
             <div>
-                <div
-                    id='page-wrapper-root'
-                    ref={scrollRef}
-                    style={{ overflow: "auto" }}
-                >
-                    <div style={{ whiteSpace: "nowrap" }}>
-                        <div id='social-button'>
-                            <SocialButtons
-                                leftIcon={
-                                    <BackIcon back={() => setCurrentPage(1)} />
-                                }
-                            />
-                        </div>
-                        <div className='page-container'>
-                            <About goToFocus={() => pageRefs[2].callback()} />
-                        </div>
-                        <div className='page-container' ref={pageRefs[0].ref}>
-                            <FocusPage
-                                goToInvestor={() => pageRefs[1].callback()}
-                            />
-                        </div>
+                <div id='page-wrapper-root' ref={wrapRef}>
+                    <div id='social-button'>
+                        <SocialButtons
+                            leftIcon={
+                                <BackIcon back={() => setCurrentPage(1)} />
+                            }
+                        />
+                    </div>
+                    <div className='page-container'>
+                        <About goToFocus={() => pageRefs[2].callback()} />
+                    </div>
+                    <div className='page-container' ref={pageRefs[0].ref}>
+                        <FocusPage
+                            goToInvestor={() => pageRefs[1].callback()}
+                        />
+                    </div>
 
-                        <TrackVisibility
-                            className='page-container'
-                            ref={pageRefs[1].ref}
-                        >
-                            <InvestorPage />
-                        </TrackVisibility>
+                    <TrackVisibility
+                        className='page-container'
+                        ref={pageRefs[1].ref}
+                    >
+                        <InvestorPage />
+                    </TrackVisibility>
 
-                        <div className='page-container' ref={pageRefs[2].ref}>
-                            <SignUp />
-                        </div>
+                    <div className='page-container' ref={pageRefs[2].ref}>
+                        <SignUp />
                     </div>
                 </div>
             </div>

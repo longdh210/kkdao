@@ -1,5 +1,5 @@
 import "./Investor.css";
-import BackgroundVideo from "./../../assets/video/Section03BG.mp4";
+import BackgroundVideo from "./../../assets/video/Section3Final.mp4";
 import { useState, useRef, useEffect } from "react";
 import Rock4 from "./../../assets/KKDAO_Rock/Rock04.png";
 import Rock5 from "./../../assets/KKDAO_Rock/Rock05.png";
@@ -47,9 +47,9 @@ const Investor = ({ goToSignUp }) => {
                 muted
                 onEnded={() => {
                     setIsDone(true);
-                    setTimeout(() => {
-                        setFirstLoad(false);
-                    }, 2000);
+                    // setTimeout(() => {
+                    //     setFirstLoad(false);
+                    // }, 2000);
                 }}
                 id='investor-video'
             />
