@@ -183,8 +183,9 @@
   font-style: normal;
   z-index: 2;
   text-transform: uppercase;
-  margin-top: 1%;
+  margin-top: 2%;
   margin-bottom: 50px;
+  line-height: 180%;
 }
 
 .wrapButton {

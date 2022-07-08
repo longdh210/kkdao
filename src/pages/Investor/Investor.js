@@ -23,8 +23,7 @@ const Investor = ({ goToSignUp }) => {
         slidesToShow: 3,
         centerMode: true,
         centerPadding: 0,
-        // nextArrow: <NextArrow />,
-        // prevArrow: <PrevArrow />,
+        arrows: false,
         beforeChange: (current, next) => setLogoIndex(next),
     };
 
@@ -47,9 +46,9 @@ const Investor = ({ goToSignUp }) => {
                 muted
                 onEnded={() => {
                     setIsDone(true);
-                    // setTimeout(() => {
-                    //     setFirstLoad(false);
-                    // }, 2000);
+                    setTimeout(() => {
+                        setFirstLoad(false);
+                    }, 2000);
                 }}
                 id='investor-video'
             />
@@ -144,14 +143,6 @@ const Investor = ({ goToSignUp }) => {
                 </div>
             )}
         </motion.div>
-    );
-};
-
-const BackIcon = () => {
-    return (
-        <div>
-            <img src={BackButton} alt='BackIcon' className='backIcon' />
-        </div>
     );
 };
 

@@ -9,6 +9,7 @@
   background-image: url("../../assets/focus-bg.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-color: transparent;
 }
 
 .titleFocus {
